@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Shortlink Site</title>
+    <title>GLIF Site</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
     <script src="https://cdn.tailwindcss.com"></script>
@@ -56,10 +56,25 @@
       };
     </script>
     <style>
-      @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
-      
+      @font-face {
+      font-family: NAURYZREDKEDS;
+      src: url(assets\fonts\NAURYZREDKEDS.ttf);
+    }
+    @font-face {
+      font-family: SpaceGro;
+      src: url(/assets/fonts/SpaceGrotesk-Medium.ttf);
+    }
+    
+    .font-nauryz {
+      font-family: NAURYZREDKEDS, sans-serif;
+    }
+    
+    .font-space {
+      font-family: SpaceGro, sans-serif;
+    }
+    
       body {
-        font-family: 'Poppins', sans-serif;
+        font-family: 'SpaceGro';
         background: linear-gradient(135deg, #121212 0%, #1e1e1e 100%);
         background-attachment: fixed;
         position: relative;
@@ -268,19 +283,18 @@
     </div>
     
     <!-- Header -->
-    <header id="navbar" class="fixed top-0 left-0 w-full z-50 transition-all duration-300">
-      <div class="flex justify-between items-center px-6 py-4 transition-all duration-500">
-        <div class="relative">
-          <a href="#home" class="flex items-center space-x-2 group">
-            <div class="h-10 w-10 rounded-full bg-orangeAccent flex items-center justify-center overflow-hidden shadow-lg shadow-orangeAccent/20 group-hover:shadow-orangeAccent/40 transition-all duration-300">
-              <i class="bi bi-link-45deg text-white text-2xl"></i>
-            </div>
-            <span class="text-lg font-semibold tracking-wider hidden md:inline-block group-hover:text-orangeAccent transition-colors duration-300">SHORTLINK</span>
-          </a>
+    <header id="navbar" class="fixed top-0 left-0 w-full z-50 transition-all duration-300 font-space">
+    <div class="flex justify-between items-center px-6 py-4 transition-all duration-500">
+      <div class="relative">
+        <a href="#home" class="flex items-center space-x-2 group">
+        <div class="h-12 w-12 rounded-full flex items-center justify-center overflow-hidden shadow-lg shadow-orangeAccent/20 group-hover:shadow-orangeAccent/40 transition-all duration-300">
+          <img src="assets/images/g_accent.png" alt="G Logo" class="w-full h-full object-contain">
         </div>
-        <nav>
-          <button id="menu-toggle" class="text-lightText hover:text-orangeAccent focus:outline-none transition-transform duration-300 transform hover:scale-110 p-2 rounded-full" aria-label="Toggle menu">
-            <i class="bi bi-list text-2xl"></i>
+        </a>
+      </div>
+      <nav>
+        <button id="menu-toggle" class="text-lightText hover:text-orangeAccent focus:outline-none transition-transform duration-300 transform hover:scale-110 p-2 rounded-full" aria-label="Toggle menu">
+        <i class="bi bi-list text-3xl"></i>
           </button>
           <div id="menu" class="absolute right-4 top-20 glass-effect p-5 rounded-xl space-y-4 hidden">
             <a href="#home" class="menu-item flex items-center space-x-3 text-lightText hover:text-orangeAccent transition-colors duration-300">
@@ -304,19 +318,19 @@
       </div>
     </header>
 
-    <main class="pt-24 space-y-32">
+    <main class="pt-0 space-y-32">
       <!-- Home Section -->
-      <section id="home" class="min-h-screen flex flex-col justify-center items-center text-center px-4 py-16">
+      <section id="home" class="min-h-screen flex flex-col justify-center items-center text-center px-4 py-16 font-space">
         <div class="animate-float">
-          <div class="h-32 w-32 rounded-full bg-gradient-to-br from-orangeAccent to-accentHover flex items-center justify-center shadow-lg shadow-orangeAccent/20 mb-6 mx-auto">
-            <i class="bi bi-link-45deg text-white text-7xl"></i>
+          <div class="relative w-96 pb-[56.25%] rounded-full bg-gradient-to-br flex items-center justify-center shadow-lg shadow-orangeAccent/20 mb-1 mx-auto"></div>
+            <img src="assets/images/glif_accent.png" alt="GLIF Logo" class="absolute top-0 left-0 w-full h-full object-contain">
           </div>
         </div>
         
-        <h1 class="text-4xl md:text-5xl font-bold mt-6 mb-4 opacity-0 animate-slide-up animate-delay-100">Short Link, Big Impact</h1>
+        <h1 class="text-4xl md:text-5xl font-bold mt-6 mb-4 opacity-0 animate-slide-up animate-delay-100">Be Bold, Unfold</h1>
         
         <p class="text-lg text-gray-300 mb-8 max-w-md mx-auto opacity-0 animate-slide-up animate-delay-200">
-          Sederhanakan dan kustomisasi link Anda dengan layanan shortlink terbaik dan teraman.
+          Sederhanakan dan kustomisasi link Anda dengan layanan GLIF terbaik dan teraman.
         </p>
         
         <div class="flex justify-center space-x-6 mb-10 opacity-0 animate-slide-up animate-delay-300">
@@ -343,6 +357,14 @@
             <i class="bi bi-file-earmark-text"></i>
             <span>Dokumentasi</span>
           </a>
+          <a href="#" class="btn-accent flex items-center justify-center px-6 py-3 rounded-full text-white space-x-2 glow-on-hover">
+            <i class="bi bi-file-earmark-text"></i>
+            <span>Dokumentasi</span>
+          </a>
+          <a href="#" class="btn-accent flex items-center justify-center px-6 py-3 rounded-full text-white space-x-2 glow-on-hover">
+            <i class="bi bi-file-earmark-text"></i>
+            <span>Dokumentasi</span>
+          </a>
         </div>
         
         <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce">
@@ -353,23 +375,19 @@
       </section>
 
       <!-- Anggota Section -->
-      <section id="anggota" class="px-4 py-16 relative">
+      <section id="anggota" class="px-4 py-16 relative font-space">
         <div class="text-center mb-12">
           <h2 class="text-3xl font-bold mb-2 relative inline-block">
-            <span class="relative z-10">Anggota Tim</span>
+            <span class="relative z-10">Anggota Glif Inside</span>
             <span class="absolute -bottom-2 left-0 w-full h-1 bg-orangeAccent rounded-full"></span>
           </h2>
-          <p class="text-gray-400 max-w-xl mx-auto">Tim profesional yang siap membantu memaksimalkan potensi link Anda.</p>
+          <p class="pt-3 text-gray-400 max-w-xl mx-auto">Kami berjalan sebagai tim.</p>
         </div>
         
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
           <div class="glass-effect overflow-hidden rounded-xl shadow-lg card-hover opacity-0 animate-fade-in animate-delay-100">
             <div class="gradient-overlay relative">
-              <img src="/api/placeholder/400/320" alt="Anggota 1" class="w-full h-64 object-cover" />
-              <div class="absolute bottom-0 left-0 w-full p-4 text-left">
-                <h3 class="font-bold text-xl">Ahmad Rizki</h3>
-                <p class="text-gray-300">Founder & CEO</p>
-              </div>
+              <img src="https://drive.google.com/thumbnail?id=1JVl8LMOohrXHnfNHlqTFrTvw8ZBGWaVy&sz=w1000" alt="Anggota 1" class="w-full h-100 object-cover" />
             </div>
             <div class="p-4 flex justify-center space-x-4">
               <a href="#" class="text-gray-400 hover:text-orangeAccent transition-colors duration-300">
@@ -386,11 +404,7 @@
           
           <div class="glass-effect overflow-hidden rounded-xl shadow-lg card-hover opacity-0 animate-fade-in animate-delay-200">
             <div class="gradient-overlay relative">
-              <img src="/api/placeholder/400/320" alt="Anggota 2" class="w-full h-64 object-cover" />
-              <div class="absolute bottom-0 left-0 w-full p-4 text-left">
-                <h3 class="font-bold text-xl">Siti Aisyah</h3>
-                <p class="text-gray-300">Lead Developer</p>
-              </div>
+              <img src="https://drive.google.com/thumbnail?id=1UJwjkALnYVymlinbIx7h_ynjHx2MRH6C&sz=w1000" alt="Anggota 2" class="w-full h-100 object-cover" />
             </div>
             <div class="p-4 flex justify-center space-x-4">
               <a href="#" class="text-gray-400 hover:text-orangeAccent transition-colors duration-300">
@@ -407,7 +421,7 @@
           
           <div class="glass-effect overflow-hidden rounded-xl shadow-lg card-hover opacity-0 animate-fade-in animate-delay-300">
             <div class="gradient-overlay relative">
-              <img src="/api/placeholder/400/320" alt="Anggota 3" class="w-full h-64 object-cover" />
+              <img src="https://drive.google.com/thumbnail?id=1JVl8LMOohrXHnfNHlqTFrTvw8ZBGWaVy&sz=w1000" alt="Anggota 3" class="w-full h-100 object-cover" />
               <div class="absolute bottom-0 left-0 w-full p-4 text-left">
                 <h3 class="font-bold text-xl">Budi Santoso</h3>
                 <p class="text-gray-300">Marketing Director</p>
@@ -428,7 +442,7 @@
           
           <div class="glass-effect overflow-hidden rounded-xl shadow-lg card-hover opacity-0 animate-fade-in animate-delay-400">
             <div class="gradient-overlay relative">
-              <img src="/api/placeholder/400/320" alt="Anggota 4" class="w-full h-64 object-cover" />
+              <img src="https://drive.google.com/thumbnail?id=1JVl8LMOohrXHnfNHlqTFrTvw8ZBGWaVy&sz=w1000" alt="Anggota 4" class="w-full h-100 object-cover" />
               <div class="absolute bottom-0 left-0 w-full p-4 text-left">
                 <h3 class="font-bold text-xl">Dina Putri</h3>
                 <p class="text-gray-300">UI/UX Designer</p>
@@ -449,7 +463,7 @@
           
           <div class="glass-effect overflow-hidden rounded-xl shadow-lg card-hover opacity-0 animate-fade-in animate-delay-500">
             <div class="gradient-overlay relative">
-              <img src="/api/placeholder/400/320" alt="Anggota 5" class="w-full h-64 object-cover" />
+              <img src="https://drive.google.com/thumbnail?id=1JVl8LMOohrXHnfNHlqTFrTvw8ZBGWaVy&sz=w1000" alt="Anggota 5" class="w-full h-100 object-cover" />
               <div class="absolute bottom-0 left-0 w-full p-4 text-left">
                 <h3 class="font-bold text-xl">Rudi Hartono</h3>
                 <p class="text-gray-300">Backend Developer</p>
@@ -470,7 +484,7 @@
           
           <div class="glass-effect overflow-hidden rounded-xl shadow-lg card-hover opacity-0 animate-fade-in animate-delay-500">
             <div class="gradient-overlay relative">
-              <img src="/api/placeholder/400/320" alt="Anggota 6" class="w-full h-64 object-cover" />
+              <img src="https://drive.google.com/thumbnail?id=1JVl8LMOohrXHnfNHlqTFrTvw8ZBGWaVy&sz=w1000" alt="Anggota 6" class="w-full h-100 object-cover" />
               <div class="absolute bottom-0 left-0 w-full p-4 text-left">
                 <h3 class="font-bold text-xl">Maya Indah</h3>
                 <p class="text-gray-300">Customer Support</p>
@@ -492,13 +506,13 @@
       </section>
 
       <!-- Event Section -->
-      <section id="event" class="px-4 py-16 relative">
+      <section id="event" class="px-4 py-16 relative font-space">
         <div class="text-center mb-12">
           <h2 class="text-3xl font-bold mb-2 relative inline-block">
-            <span class="relative z-10">Event & Webinar</span>
+            <span class="relative z-10">Event</span>
             <span class="absolute -bottom-2 left-0 w-full h-1 bg-orangeAccent rounded-full"></span>
           </h2>
-          <p class="text-gray-400 max-w-xl mx-auto">Acara dan pelatihan terkini untuk mengembangkan pengetahuan digital Anda.</p>
+          <p class="text-gray-400 max-w-xl mx-auto">Event gokil-gokilan</p>
         </div>
         
         <div class="max-w-6xl mx-auto">
@@ -515,7 +529,7 @@
                 <div class="p-5">
                   <h3 class="font-bold text-xl mb-2">Digital Marketing Webinar</h3>
                   <p class="text-gray-400 text-sm mb-4">
-                    Belajar strategi pemasaran digital terbaru dan cara mengoptimalkan shortlink Anda.
+                    Belajar strategi pemasaran digital terbaru dan cara mengoptimalkan GLIF Anda.
                   </p>
                   <div class="flex justify-between items-center">
                     <span class="text-orangeAccent font-medium">
@@ -538,7 +552,7 @@
                 <div class="p-5">
                   <h3 class="font-bold text-xl mb-2">Link Analytics Workshop</h3>
                   <p class="text-gray-400 text-sm mb-4">
-                    Workshop cara membaca dan menganalisis data dari shortlink untuk pengambilan keputusan.
+                    Workshop cara membaca dan menganalisis data dari GLIF untuk pengambilan keputusan.
                   </p>
                   <div class="flex justify-between items-center">
                     <span class="text-orangeAccent font-medium">
@@ -587,32 +601,28 @@
       </section>
 
       <!-- Glif Your Section -->
-      <section id="glifyour" class="px-4 py-16 relative">
+      <section id="glifyour" class="px-4 py-16 relative font-space">
         <div class="max-w-4xl mx-auto glass-effect p-8 rounded-2xl opacity-0 animate-expand animate-delay-100">
           <div class="text-center">
-            <div class="inline-block bg-gradient-to-br from-orangeAccent to-accentHover p-4 rounded-full mb-6">
-              <i class="bi bi-link-45deg text-4xl text-white"></i>
+            <div class="inline-block bg-gradient-to-br  p-4 rounded-full mb-6">
+              <img src="assets/images/g_accent.png" alt="G Logo" class="w-12 h-12 object-contain">
             </div>
-            <h2 class="text-3xl font-bold mb-4">Glif Your Link</h2>
+            <h2 class="text-3xl font-bold mb-4">Glify kan profile mu.</h2>
             <p class="text-gray-300 mb-8 max-w-lg mx-auto">
-              Personalisasi URL Anda, dapatkan statistik real-time, dan maksimalkan engagement dengan Glif Your Link.
+              Personalisasi profile Anda dengan tema unik dari Glif Studio yang didesain oleh anggota kami.
             </p>
             
             <div class="flex flex-col sm:flex-row items-center justify-center space-y-4 sm:space-y-0 sm:space-x-6">
-              <a href="https://glifyour.example.com" target="_blank" class="btn-accent flex items-center justify-center px-6 py-3 rounded-full text-white space-x-2 glow-on-hover w-full sm:w-auto">
+              <a href="https://glif-yours.vercel.app" target="_blank" class="btn-accent flex items-center justify-center px-6 py-3 rounded-full text-white space-x-2 glow-on-hover w-full sm:w-auto">
                 <i class="bi bi-box-arrow-up-right me-2"></i>
                 <span>Mulai Sekarang</span>
-              </a>
-              <a href="#" class="flex items-center justify-center px-6 py-3 rounded-full border border-orangeAccent text-orangeAccent hover:bg-orangeAccent hover:text-white transition-colors duration-300 space-x-2 w-full sm:w-auto">
-                <i class="bi bi-info-circle me-2"></i>
-                <span>Pelajari Fitur</span>
               </a>
             </div>
           </div>
         </div>
         
         <!-- Stats Cards -->
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto mt-10">
+        <!-- <div class="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto mt-10 font-space">
           <div class="glass-effect p-6 rounded-xl text-center opacity-0 animate-fade-in animate-delay-200">
             <div class="inline-flex items-center justify-center h-16 w-16 rounded-full bg-orangeAccent/20 mb-4 mx-auto">
               <i class="bi bi-people-fill text-2xl text-orangeAccent"></i>
@@ -637,10 +647,10 @@
             <p class="text-gray-400">Uptime (%)</p>
           </div>
         </div>
-      </section>
+      </section> -->
       
       <!-- FAQ Section -->
-      <section id="faq" class="px-4 py-16 relative">
+      <!-- <section id="faq" class="px-4 py-16 relative font-space">
         <div class="text-center mb-12">
           <h2 class="text-3xl font-bold mb-2 relative inline-block">
             <span class="relative z-10">FAQ</span>
@@ -653,11 +663,11 @@
           <div class="space-y-4">
             <div class="faq-item">
               <button class="faq-question w-full text-left p-4 flex justify-between items-center bg-cardBg rounded-lg hover:bg-orangeAccent/20 transition-colors duration-300">
-                <span class="font-semibold">Apa itu layanan shortlink?</span>
+                <span class="font-semibold">Apa itu layanan GLIF?</span>
                 <i class="bi bi-plus-lg faq-icon transition-transform duration-300"></i>
               </button>
               <div class="faq-answer p-4 hidden mt-2 text-gray-400 rounded-lg bg-cardBg/50">
-                Layanan shortlink adalah platform yang memungkinkan Anda mempersingkat URL panjang menjadi tautan yang lebih pendek dan mudah diingat. Ini juga memungkinkan Anda melacak klik dan engagement pada tautan tersebut.
+                Layanan GLIF adalah platform yang memungkinkan Anda mempersingkat URL panjang menjadi tautan yang lebih pendek dan mudah diingat. Ini juga memungkinkan Anda melacak klik dan engagement pada tautan tersebut.
               </div>
             </div>
             
@@ -692,12 +702,12 @@
             </div>
           </div>
         </div>
-      </section>
+      </section> -->
       
       <!-- Newsletter Section -->
-      <section id="newsletter" class="px-4 py-16 relative">
+      <!-- <section id="newsletter" class="px-4 py-16 relative font-space">
         <div class="max-w-4xl mx-auto glass-effect p-8 rounded-2xl relative overflow-hidden">
-          <!-- Abstract gradient background -->
+          //Abstract gradient background
           <div class="absolute inset-0 z-0 opacity-20">
             <div class="absolute -top-20 -right-20 w-64 h-64 rounded-full bg-orangeAccent/30 filter blur-3xl"></div>
             <div class="absolute -bottom-20 -left-20 w-64 h-64 rounded-full bg-orangeAccent/20 filter blur-3xl"></div>
@@ -709,7 +719,7 @@
             </div>
             <h2 class="text-3xl font-bold mb-4">Dapatkan Update Terbaru</h2>
             <p class="text-gray-300 mb-8 max-w-lg mx-auto">
-              Berlangganan newsletter kami untuk mendapatkan tips, trik, dan berita terbaru seputar digital marketing dan shortlink.
+              Berlangganan newsletter kami untuk mendapatkan tips, trik, dan berita terbaru seputar digital marketing dan GLIF.
             </p>
             
             <form class="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
@@ -721,22 +731,22 @@
             <p class="text-sm text-gray-500 mt-4">Kami tidak akan pernah membagikan email Anda. Lihat kebijakan privasi kami.</p>
           </div>
         </div>
-      </section>
+      </section> -->
     </main>
 
     <!-- Footer -->
-    <footer class="px-4 py-10 border-t border-gray-800">
+    <footer class="px-4 py-10 border-t border-gray-800 font-space">
       <div class="max-w-6xl mx-auto">
         <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
           <div class="col-span-1 md:col-span-2">
             <a href="#home" class="flex items-center space-x-2 group mb-4">
-              <div class="h-10 w-10 rounded-full bg-orangeAccent flex items-center justify-center overflow-hidden shadow-lg shadow-orangeAccent/20 group-hover:shadow-orangeAccent/40 transition-all duration-300">
-                <i class="bi bi-link-45deg text-white text-2xl"></i>
+              <div class="h-10 w-10 rounded-full bg flex items-center justify-center overflow-hidden shadow-lg shadow-orangeAccent/20 group-hover:shadow-orangeAccent/40 transition-all duration-300">
+                <img src="assets/images/glif_accent.png" alt="G Logo" class="w-24 h-24 object-contain">
               </div>
-              <span class="text-lg font-semibold tracking-wider group-hover:text-orangeAccent transition-colors duration-300">SHORTLINK</span>
+           
             </a>
             <p class="text-gray-400 mb-4">
-              Platform shortlink terbaik dengan fitur analitik dan kustomisasi yang lengkap untuk kebutuhan digital marketing Anda.
+              Platform GLIF terbaik dengan fitur analitik dan kustomisasi yang lengkap untuk kebutuhan digital marketing Anda.
             </p>
             <div class="flex space-x-4">
               <a href="#" class="text-gray-400 hover:text-orangeAccent transition-colors duration-300">
@@ -754,10 +764,10 @@
             </div>
           </div>
 
-          <div>
+          <!-- <div>
             <h3 class="font-bold text-lg mb-4">Layanan</h3>
             <ul class="space-y-2">
-              <li><a href="#" class="text-gray-400 hover:text-orangeAccent transition-colors duration-300">Shortlink</a></li>
+              <li><a href="#" class="text-gray-400 hover:text-orangeAccent transition-colors duration-300">GLIF</a></li>
               <li><a href="#" class="text-gray-400 hover:text-orangeAccent transition-colors duration-300">Analytics</a></li>
               <li><a href="#" class="text-gray-400 hover:text-orangeAccent transition-colors duration-300">Custom Domain</a></li>
               <li><a href="#" class="text-gray-400 hover:text-orangeAccent transition-colors duration-300">QR Code</a></li>
@@ -773,14 +783,14 @@
               <li><a href="#" class="text-gray-400 hover:text-orangeAccent transition-colors duration-300">Kontak</a></li>
             </ul>
           </div>
-        </div>
+        </div> -->
 
         <div class="border-t border-gray-800 mt-8 pt-8 flex flex-col md:flex-row justify-between items-center">
-          <p class="text-gray-500 text-sm">© 2025 Shortlink. All rights reserved.</p>
-          <div class="flex space-x-4 mt-4 md:mt-0">
+          <p class="text-gray-500 text-sm">© 2025 GLIF. All rights reserved.</p>
+          <!-- <div class="flex space-x-4 mt-4 md:mt-0">
             <a href="#" class="text-gray-500 hover:text-orangeAccent text-sm transition-colors duration-300">Syarat & Ketentuan</a>
             <a href="#" class="text-gray-500 hover:text-orangeAccent text-sm transition-colors duration-300">Kebijakan Privasi</a>
-          </div>
+          </div> -->
         </div>
       </div>
     </footer>
