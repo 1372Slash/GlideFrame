@@ -274,13 +274,87 @@
         position: relative;
         z-index: 2;
       }
+      #intro-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: #001259;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  animation: fadeOut 1s ease-in-out 2s forwards;
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+}
+
+#into-blur {
+    position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  animation: fadeOut 5s ease-in-out 5s forwards;
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+}
+
+.video-wrapper {
+    scale: 0.6;
+  animation: bounceIn 1s ease-out;
+  will-change: transform;
+}
+
+@keyframes bounceIn {
+  0% {
+                transform: scale(0);
+                opacity: 0;
+            }
+            20% {
+                transform: scale(1.2);
+                opacity: 1;
+            }
+            40% {
+                transform:  scale(1);
+                opacity: 1;
+            }
+            90% {
+                transform: scale(1);
+                opacity: 1;
+            }
+            100% {
+                transform:  scale(1);
+                opacity: 1;
+            }
+}
+
+@keyframes fadeOut {
+  to {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+
     </style>
   </head>
   <body class="bg-darkBg text-lightText font-sans">
     <!-- Preloader -->
-    <div id="preloader">
-      <div class="loader"></div>
+    <div id="intro-overlay">
+  <div id="intro_blur">
+    <div class="video-wrapper">
+      <video autoplay muted loop>
+        <source src="assets\videos\intro_video.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
     </div>
+  </div>
+</div>
     
     <!-- Header -->
     <header id="navbar" class="fixed top-0 left-0 w-full z-50 transition-all duration-300 font-space">
@@ -746,7 +820,7 @@
            
             </a>
             <p class="text-gray-400 mb-4">
-              Platform GLIF terbaik dengan fitur analitik dan kustomisasi yang lengkap untuk kebutuhan digital marketing Anda.
+              Komunitan inklusif dan ekslusif yang berfokus pada pengembangan diri dan kolaborasi.
             </p>
             <div class="flex space-x-4">
               <a href="#" class="text-gray-400 hover:text-orangeAccent transition-colors duration-300">
