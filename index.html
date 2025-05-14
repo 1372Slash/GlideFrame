@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>GLIF Site</title>
+    <title>GLIF | Site</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
     <script src="https://cdn.tailwindcss.com"></script>
@@ -56,6 +56,10 @@
       };
     </script>
     <style>
+      :root {
+        --dark-color: #001259;
+      }
+
       @font-face {
       font-family: NAURYZREDKEDS;
       src: url(assets\fonts\NAURYZREDKEDS.ttf);
@@ -340,6 +344,37 @@
     visibility: hidden;
   }
 }
+.custom-snackbar {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background-color: #222;
+  color: #fff;
+  overflow: hidden;
+  z-index: 9999;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  font-family: SpaceGro, sans-serif;
+  font-size: 14px;
+  border-top: 2px solid #444;
+}
+
+.custom-snackbar-track {
+  white-space: nowrap;
+  display: inline-block;
+  animation: scroll-left 30s linear infinite;
+  padding-left: 100%;
+}
+
+@keyframes scroll-left {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
 
     </style>
   </head>
@@ -355,6 +390,14 @@
     </div>
   </div>
 </div>
+
+  <!-- Snackbar -->
+   <div class="custom-snackbar">
+  <div class="custom-snackbar-track">
+    <span>Website Work In Progress • Semua yang tampil saat ini belum final dan akan berubah dikemudian hari.</span>
+  </div>
+</div>
+
     
     <!-- Header -->
     <header id="navbar" class="fixed top-0 left-0 w-full z-50 transition-all duration-300 font-space">
@@ -404,41 +447,45 @@
         <h1 class="text-4xl md:text-5xl font-bold mt-6 mb-4 opacity-0 animate-slide-up animate-delay-100">Be Bold, Unfold</h1>
         
         <p class="text-lg text-gray-300 mb-8 max-w-md mx-auto opacity-0 animate-slide-up animate-delay-200">
-          Sederhanakan dan kustomisasi link Anda dengan layanan GLIF terbaik dan teraman.
+          Kamu lebih dari yang kamu pikirkan. Kami adalah wadah untuk kamu yang ingin berkontribusi lebih untuk diri sendiri dan orang lain. Bergabunglah dengan kami di GLIF, tempat di mana kamu bisa menjadi versi terbaik dari dirimu.
         </p>
         
         <div class="flex justify-center space-x-6 mb-10 opacity-0 animate-slide-up animate-delay-300">
-          <a href="#" class="text-gray-400 hover:text-orangeAccent transition-colors duration-300">
+          <!-- <a href="#" class="text-gray-400 hover:text-orangeAccent transition-colors duration-300">
             <i class="bi bi-twitter text-xl"></i>
-          </a>
-          <a href="#" class="text-gray-400 hover:text-orangeAccent transition-colors duration-300">
+          </a> -->
+          <a href="https://www.instagram.com/glideinside" class="text-gray-400 hover:text-orangeAccent transition-colors duration-300">
             <i class="bi bi-instagram text-xl"></i>
           </a>
-          <a href="#" class="text-gray-400 hover:text-orangeAccent transition-colors duration-300">
+          <!-- <a href="#" class="text-gray-400 hover:text-orangeAccent transition-colors duration-300">
             <i class="bi bi-github text-xl"></i>
-          </a>
-          <a href="#" class="text-gray-400 hover:text-orangeAccent transition-colors duration-300">
+          </a> -->
+          <!-- <a href="#" class="text-gray-400 hover:text-orangeAccent transition-colors duration-300">
             <i class="bi bi-linkedin text-xl"></i>
-          </a>
+          </a> -->
         </div>
         
         <div class="grid grid-cols-1 md:grid-cols-2 gap-4 w-full max-w-lg mx-auto opacity-0 animate-slide-up animate-delay-400">
-          <a href="#" class="btn-accent flex items-center justify-center px-6 py-3 rounded-full text-white space-x-2 glow-on-hover">
-            <i class="bi bi-link-45deg"></i>
-            <span>Buat Link</span>
+          <a href="https://forms.gle/P2Cz79JQYtek1Y7H7" class="btn-accent flex items-center justify-center px-6 py-3 rounded-full text-white space-x-2 glow-on-hover">
+            <i class="bi bi-send-fill"></i>
+            <span>Submission : Next G</span>
           </a>
-          <a href="#" class="btn-accent flex items-center justify-center px-6 py-3 rounded-full text-white space-x-2 glow-on-hover">
+
+          <a href="#event" class="btn-accent flex items-center justify-center px-6 py-3 rounded-full text-white space-x-2 glow-on-hover">
+            <i class="bi bi-person-fill"></i>
+            <span>Agen Jualan Balon</span>
+          </a>
+
+          <!-- <a href="#" class="btn-accent flex items-center justify-center px-6 py-3 rounded-full text-white space-x-2 glow-on-hover">
             <i class="bi bi-file-earmark-text"></i>
             <span>Dokumentasi</span>
           </a>
+
           <a href="#" class="btn-accent flex items-center justify-center px-6 py-3 rounded-full text-white space-x-2 glow-on-hover">
             <i class="bi bi-file-earmark-text"></i>
             <span>Dokumentasi</span>
-          </a>
-          <a href="#" class="btn-accent flex items-center justify-center px-6 py-3 rounded-full text-white space-x-2 glow-on-hover">
-            <i class="bi bi-file-earmark-text"></i>
-            <span>Dokumentasi</span>
-          </a>
+          </a> -->
+          
         </div>
         
         <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce">
@@ -458,10 +505,10 @@
           <p class="pt-3 text-gray-400 max-w-xl mx-auto">Kami berjalan sebagai tim.</p>
         </div>
         
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
           <div class="glass-effect overflow-hidden rounded-xl shadow-lg card-hover opacity-0 animate-fade-in animate-delay-100">
             <div class="gradient-overlay relative">
-              <img src="https://drive.google.com/thumbnail?id=1JVl8LMOohrXHnfNHlqTFrTvw8ZBGWaVy&sz=w1000" alt="Anggota 1" class="w-full h-100 object-cover" />
+              <img src="https://drive.google.com/thumbnail?id=1JVl8LMOohrXHnfNHlqTFrTvw8ZBGWaVy&sz=w1000" alt="Anggota" class="w-full h-100 object-cover" />
             </div>
             <div class="p-4 flex justify-center space-x-4">
               <a href="#" class="text-gray-400 hover:text-orangeAccent transition-colors duration-300">
@@ -478,7 +525,7 @@
           
           <div class="glass-effect overflow-hidden rounded-xl shadow-lg card-hover opacity-0 animate-fade-in animate-delay-200">
             <div class="gradient-overlay relative">
-              <img src="https://drive.google.com/thumbnail?id=1UJwjkALnYVymlinbIx7h_ynjHx2MRH6C&sz=w1000" alt="Anggota 2" class="w-full h-100 object-cover" />
+              <img src="https://drive.google.com/thumbnail?id=1UJwjkALnYVymlinbIx7h_ynjHx2MRH6C&sz=w1000" alt="Anggota" class="w-full h-100 object-cover" />
             </div>
             <div class="p-4 flex justify-center space-x-4">
               <a href="#" class="text-gray-400 hover:text-orangeAccent transition-colors duration-300">
@@ -495,11 +542,11 @@
           
           <div class="glass-effect overflow-hidden rounded-xl shadow-lg card-hover opacity-0 animate-fade-in animate-delay-300">
             <div class="gradient-overlay relative">
-              <img src="https://drive.google.com/thumbnail?id=1JVl8LMOohrXHnfNHlqTFrTvw8ZBGWaVy&sz=w1000" alt="Anggota 3" class="w-full h-100 object-cover" />
-              <div class="absolute bottom-0 left-0 w-full p-4 text-left">
+              <img src="https://drive.google.com/thumbnail?id=1I0ccHH_1Q03w1ThmJpoGUgqEZHtqJPUf&sz=w1000" alt="Anggota" class="w-full h-100 object-cover" />
+              <!-- <div class="absolute bottom-0 left-0 w-full p-4 text-left">
                 <h3 class="font-bold text-xl">Budi Santoso</h3>
                 <p class="text-gray-300">Marketing Director</p>
-              </div>
+              </div> -->
             </div>
             <div class="p-4 flex justify-center space-x-4">
               <a href="#" class="text-gray-400 hover:text-orangeAccent transition-colors duration-300">
@@ -516,11 +563,11 @@
           
           <div class="glass-effect overflow-hidden rounded-xl shadow-lg card-hover opacity-0 animate-fade-in animate-delay-400">
             <div class="gradient-overlay relative">
-              <img src="https://drive.google.com/thumbnail?id=1JVl8LMOohrXHnfNHlqTFrTvw8ZBGWaVy&sz=w1000" alt="Anggota 4" class="w-full h-100 object-cover" />
-              <div class="absolute bottom-0 left-0 w-full p-4 text-left">
+              <img src="https://drive.google.com/thumbnail?id=1uQB7ixh1ai6qQnO_6YU7mcyEZwXbJToV&sz=w1000" alt="Anggota" class="w-full h-100 object-cover" />
+              <!-- <div class="absolute bottom-0 left-0 w-full p-4 text-left">
                 <h3 class="font-bold text-xl">Dina Putri</h3>
                 <p class="text-gray-300">UI/UX Designer</p>
-              </div>
+              </div> -->
             </div>
             <div class="p-4 flex justify-center space-x-4">
               <a href="#" class="text-gray-400 hover:text-orangeAccent transition-colors duration-300">
@@ -537,11 +584,11 @@
           
           <div class="glass-effect overflow-hidden rounded-xl shadow-lg card-hover opacity-0 animate-fade-in animate-delay-500">
             <div class="gradient-overlay relative">
-              <img src="https://drive.google.com/thumbnail?id=1JVl8LMOohrXHnfNHlqTFrTvw8ZBGWaVy&sz=w1000" alt="Anggota 5" class="w-full h-100 object-cover" />
-              <div class="absolute bottom-0 left-0 w-full p-4 text-left">
+              <img src="https://drive.google.com/thumbnail?id=1dv4oheV6u-YXoBL0z8aQVNwwjixUAuXN&sz=w1000" alt="Anggota" class="w-full h-100 object-cover" />
+              <!-- <div class="absolute bottom-0 left-0 w-full p-4 text-left">
                 <h3 class="font-bold text-xl">Rudi Hartono</h3>
                 <p class="text-gray-300">Backend Developer</p>
-              </div>
+              </div> -->
             </div>
             <div class="p-4 flex justify-center space-x-4">
               <a href="#" class="text-gray-400 hover:text-orangeAccent transition-colors duration-300">
@@ -558,11 +605,11 @@
           
           <div class="glass-effect overflow-hidden rounded-xl shadow-lg card-hover opacity-0 animate-fade-in animate-delay-500">
             <div class="gradient-overlay relative">
-              <img src="https://drive.google.com/thumbnail?id=1JVl8LMOohrXHnfNHlqTFrTvw8ZBGWaVy&sz=w1000" alt="Anggota 6" class="w-full h-100 object-cover" />
-              <div class="absolute bottom-0 left-0 w-full p-4 text-left">
+              <img src="https://drive.google.com/thumbnail?id=18Jx3yQykRYSYoCPVY64tu9bNnU791Lnw&sz=w1000" alt="Anggota" class="w-full h-100 object-cover" />
+              <!-- <div class="absolute bottom-0 left-0 w-full p-4 text-left">
                 <h3 class="font-bold text-xl">Maya Indah</h3>
                 <p class="text-gray-300">Customer Support</p>
-              </div>
+              </div> -->
             </div>
             <div class="p-4 flex justify-center space-x-4">
               <a href="#" class="text-gray-400 hover:text-orangeAccent transition-colors duration-300">
@@ -576,6 +623,322 @@
               </a>
             </div>
           </div>
+
+          <div class="glass-effect overflow-hidden rounded-xl shadow-lg card-hover opacity-0 animate-fade-in animate-delay-500">
+            <div class="gradient-overlay relative">
+              <img src="https://drive.google.com/thumbnail?id=1khenXHfXfFgFCf80kXgJhUXV8fqAvP2w&sz=w1000" alt="Anggota" class="w-full h-100 object-cover" />
+              <!-- <div class="absolute bottom-0 left-0 w-full p-4 text-left">
+                <h3 class="font-bold text-xl">Maya Indah</h3>
+                <p class="text-gray-300">Customer Support</p>
+              </div> -->
+            </div>
+            <div class="p-4 flex justify-center space-x-4">
+              <a href="#" class="text-gray-400 hover:text-orangeAccent transition-colors duration-300">
+                <i class="bi bi-twitter"></i>
+              </a>
+              <a href="#" class="text-gray-400 hover:text-orangeAccent transition-colors duration-300">
+                <i class="bi bi-linkedin"></i>
+              </a>
+              <a href="#" class="text-gray-400 hover:text-orangeAccent transition-colors duration-300">
+                <i class="bi bi-envelope"></i>
+              </a>
+            </div>
+          </div>
+
+          <div class="glass-effect overflow-hidden rounded-xl shadow-lg card-hover opacity-0 animate-fade-in animate-delay-500">
+            <div class="gradient-overlay relative">
+              <img src="https://drive.google.com/thumbnail?id=1PJj95Yt8wx-N4Qai3wIBaJTcICGBVb6W&sz=w1000" alt="Anggota" class="w-full h-100 object-cover" />
+              <!-- <div class="absolute bottom-0 left-0 w-full p-4 text-left">
+                <h3 class="font-bold text-xl">Maya Indah</h3>
+                <p class="text-gray-300">Customer Support</p>
+              </div> -->
+            </div>
+            <div class="p-4 flex justify-center space-x-4">
+              <a href="#" class="text-gray-400 hover:text-orangeAccent transition-colors duration-300">
+                <i class="bi bi-twitter"></i>
+              </a>
+              <a href="#" class="text-gray-400 hover:text-orangeAccent transition-colors duration-300">
+                <i class="bi bi-linkedin"></i>
+              </a>
+              <a href="#" class="text-gray-400 hover:text-orangeAccent transition-colors duration-300">
+                <i class="bi bi-envelope"></i>
+              </a>
+            </div>
+          </div>
+
+          <div class="glass-effect overflow-hidden rounded-xl shadow-lg card-hover opacity-0 animate-fade-in animate-delay-500">
+            <div class="gradient-overlay relative">
+              <img src="https://drive.google.com/thumbnail?id=1UTUd9lxJhjkXgOBt-Vz0dnWh3vrGgy6w&sz=w1000" alt="Anggota" class="w-full h-100 object-cover" />
+              <!-- <div class="absolute bottom-0 left-0 w-full p-4 text-left">
+                <h3 class="font-bold text-xl">Maya Indah</h3>
+                <p class="text-gray-300">Customer Support</p>
+              </div> -->
+            </div>
+            <div class="p-4 flex justify-center space-x-4">
+              <a href="#" class="text-gray-400 hover:text-orangeAccent transition-colors duration-300">
+                <i class="bi bi-twitter"></i>
+              </a>
+              <a href="#" class="text-gray-400 hover:text-orangeAccent transition-colors duration-300">
+                <i class="bi bi-linkedin"></i>
+              </a>
+              <a href="#" class="text-gray-400 hover:text-orangeAccent transition-colors duration-300">
+                <i class="bi bi-envelope"></i>
+              </a>
+            </div>
+          </div>
+
+          <div class="glass-effect overflow-hidden rounded-xl shadow-lg card-hover opacity-0 animate-fade-in animate-delay-500">
+            <div class="gradient-overlay relative">
+              <img src="https://drive.google.com/thumbnail?id=1IXCO8q7DiZikrS7JLY6MWUd1gzI8zsdD&sz=w1000" alt="Anggota" class="w-full h-100 object-cover" />
+              <!-- <div class="absolute bottom-0 left-0 w-full p-4 text-left">
+                <h3 class="font-bold text-xl">Maya Indah</h3>
+                <p class="text-gray-300">Customer Support</p>
+              </div> -->
+            </div>
+            <div class="p-4 flex justify-center space-x-4">
+              <a href="#" class="text-gray-400 hover:text-orangeAccent transition-colors duration-300">
+                <i class="bi bi-twitter"></i>
+              </a>
+              <a href="#" class="text-gray-400 hover:text-orangeAccent transition-colors duration-300">
+                <i class="bi bi-linkedin"></i>
+              </a>
+              <a href="#" class="text-gray-400 hover:text-orangeAccent transition-colors duration-300">
+                <i class="bi bi-envelope"></i>
+              </a>
+            </div>
+          </div>
+
+          <div class="glass-effect overflow-hidden rounded-xl shadow-lg card-hover opacity-0 animate-fade-in animate-delay-500">
+            <div class="gradient-overlay relative">
+              <img src="https://drive.google.com/thumbnail?id=1Ixl9fPYaiOkoX-CO_DF5lDhvJfF7T8Bq&sz=w1000" alt="Anggota" class="w-full h-100 object-cover" />
+              <!-- <div class="absolute bottom-0 left-0 w-full p-4 text-left">
+                <h3 class="font-bold text-xl">Maya Indah</h3>
+                <p class="text-gray-300">Customer Support</p>
+              </div> -->
+            </div>
+            <div class="p-4 flex justify-center space-x-4">
+              <a href="#" class="text-gray-400 hover:text-orangeAccent transition-colors duration-300">
+                <i class="bi bi-twitter"></i>
+              </a>
+              <a href="#" class="text-gray-400 hover:text-orangeAccent transition-colors duration-300">
+                <i class="bi bi-linkedin"></i>
+              </a>
+              <a href="#" class="text-gray-400 hover:text-orangeAccent transition-colors duration-300">
+                <i class="bi bi-envelope"></i>
+              </a>
+            </div>
+          </div>
+
+          <div class="glass-effect overflow-hidden rounded-xl shadow-lg card-hover opacity-0 animate-fade-in animate-delay-500">
+            <div class="gradient-overlay relative">
+              <img src="https://drive.google.com/thumbnail?id=1f3DCdKDj9fIIUDcFHprSQ2qifF-4wKpj&sz=w1000" alt="Anggota" class="w-full h-100 object-cover" />
+              <!-- <div class="absolute bottom-0 left-0 w-full p-4 text-left">
+                <h3 class="font-bold text-xl">Maya Indah</h3>
+                <p class="text-gray-300">Customer Support</p>
+              </div> -->
+            </div>
+            <div class="p-4 flex justify-center space-x-4">
+              <a href="#" class="text-gray-400 hover:text-orangeAccent transition-colors duration-300">
+                <i class="bi bi-twitter"></i>
+              </a>
+              <a href="#" class="text-gray-400 hover:text-orangeAccent transition-colors duration-300">
+                <i class="bi bi-linkedin"></i>
+              </a>
+              <a href="#" class="text-gray-400 hover:text-orangeAccent transition-colors duration-300">
+                <i class="bi bi-envelope"></i>
+              </a>
+            </div>
+          </div>
+
+          <div class="glass-effect overflow-hidden rounded-xl shadow-lg card-hover opacity-0 animate-fade-in animate-delay-500">
+            <div class="gradient-overlay relative">
+              <img src="https://drive.google.com/thumbnail?id=1sPOnc0MLPuoNvhHWzRXpL9B6lqiyUIFs&sz=w1000" alt="Anggota" class="w-full h-100 object-cover" />
+              <!-- <div class="absolute bottom-0 left-0 w-full p-4 text-left">
+                <h3 class="font-bold text-xl">Maya Indah</h3>
+                <p class="text-gray-300">Customer Support</p>
+              </div> -->
+            </div>
+            <div class="p-4 flex justify-center space-x-4">
+              <a href="#" class="text-gray-400 hover:text-orangeAccent transition-colors duration-300">
+                <i class="bi bi-twitter"></i>
+              </a>
+              <a href="#" class="text-gray-400 hover:text-orangeAccent transition-colors duration-300">
+                <i class="bi bi-linkedin"></i>
+              </a>
+              <a href="#" class="text-gray-400 hover:text-orangeAccent transition-colors duration-300">
+                <i class="bi bi-envelope"></i>
+              </a>
+            </div>
+          </div>
+
+          <div class="glass-effect overflow-hidden rounded-xl shadow-lg card-hover opacity-0 animate-fade-in animate-delay-500">
+            <div class="gradient-overlay relative">
+              <img src="https://drive.google.com/thumbnail?id=1zi41rDyn_PoqFJ8faWcC2dNffwm061QG&sz=w1000" alt="Anggota" class="w-full h-100 object-cover" />
+              <!-- <div class="absolute bottom-0 left-0 w-full p-4 text-left">
+                <h3 class="font-bold text-xl">Maya Indah</h3>
+                <p class="text-gray-300">Customer Support</p>
+              </div> -->
+            </div>
+            <div class="p-4 flex justify-center space-x-4">
+              <a href="#" class="text-gray-400 hover:text-orangeAccent transition-colors duration-300">
+                <i class="bi bi-twitter"></i>
+              </a>
+              <a href="#" class="text-gray-400 hover:text-orangeAccent transition-colors duration-300">
+                <i class="bi bi-linkedin"></i>
+              </a>
+              <a href="#" class="text-gray-400 hover:text-orangeAccent transition-colors duration-300">
+                <i class="bi bi-envelope"></i>
+              </a>
+            </div>
+          </div>
+
+          <div class="glass-effect overflow-hidden rounded-xl shadow-lg card-hover opacity-0 animate-fade-in animate-delay-500">
+            <div class="gradient-overlay relative">
+              <img src="https://drive.google.com/thumbnail?id=1SxLQ1Novlhboxw9qYNHj0bA8U1g2WQtU&sz=w1000" alt="Anggota" class="w-full h-100 object-cover" />
+              <!-- <div class="absolute bottom-0 left-0 w-full p-4 text-left">
+                <h3 class="font-bold text-xl">Maya Indah</h3>
+                <p class="text-gray-300">Customer Support</p>
+              </div> -->
+            </div>
+            <div class="p-4 flex justify-center space-x-4">
+              <a href="#" class="text-gray-400 hover:text-orangeAccent transition-colors duration-300">
+                <i class="bi bi-twitter"></i>
+              </a>
+              <a href="#" class="text-gray-400 hover:text-orangeAccent transition-colors duration-300">
+                <i class="bi bi-linkedin"></i>
+              </a>
+              <a href="#" class="text-gray-400 hover:text-orangeAccent transition-colors duration-300">
+                <i class="bi bi-envelope"></i>
+              </a>
+            </div>
+          </div>
+
+          <div class="glass-effect overflow-hidden rounded-xl shadow-lg card-hover opacity-0 animate-fade-in animate-delay-500">
+            <div class="gradient-overlay relative">
+              <img src="https://drive.google.com/thumbnail?id=1hj79N1crfTtasrfMFDaP1is5SMaKQ10m&sz=w1000" alt="Anggota" class="w-full h-100 object-cover" />
+              <!-- <div class="absolute bottom-0 left-0 w-full p-4 text-left">
+                <h3 class="font-bold text-xl">Maya Indah</h3>
+                <p class="text-gray-300">Customer Support</p>
+              </div> -->
+            </div>
+            <div class="p-4 flex justify-center space-x-4">
+              <a href="#" class="text-gray-400 hover:text-orangeAccent transition-colors duration-300">
+                <i class="bi bi-twitter"></i>
+              </a>
+              <a href="#" class="text-gray-400 hover:text-orangeAccent transition-colors duration-300">
+                <i class="bi bi-linkedin"></i>
+              </a>
+              <a href="#" class="text-gray-400 hover:text-orangeAccent transition-colors duration-300">
+                <i class="bi bi-envelope"></i>
+              </a>
+            </div>
+          </div>
+
+          <div class="glass-effect overflow-hidden rounded-xl shadow-lg card-hover opacity-0 animate-fade-in animate-delay-500">
+            <div class="gradient-overlay relative">
+              <img src="https://drive.google.com/thumbnail?id=1w66ssHnlPRJm8DgcopxxkOg-olmQGBl4&sz=w1000" alt="Anggota" class="w-full h-100 object-cover" />
+              <!-- <div class="absolute bottom-0 left-0 w-full p-4 text-left">
+                <h3 class="font-bold text-xl">Maya Indah</h3>
+                <p class="text-gray-300">Customer Support</p>
+              </div> -->
+            </div>
+            <div class="p-4 flex justify-center space-x-4">
+              <a href="#" class="text-gray-400 hover:text-orangeAccent transition-colors duration-300">
+                <i class="bi bi-twitter"></i>
+              </a>
+              <a href="#" class="text-gray-400 hover:text-orangeAccent transition-colors duration-300">
+                <i class="bi bi-linkedin"></i>
+              </a>
+              <a href="#" class="text-gray-400 hover:text-orangeAccent transition-colors duration-300">
+                <i class="bi bi-envelope"></i>
+              </a>
+            </div>
+          </div>
+
+          <div class="glass-effect overflow-hidden rounded-xl shadow-lg card-hover opacity-0 animate-fade-in animate-delay-500">
+            <div class="gradient-overlay relative">
+              <img src="https://drive.google.com/thumbnail?id=1YyXuLceJxD0z0dEPd7QJg689GAh-Wkpd&sz=w1000" alt="Anggota" class="w-full h-100 object-cover" />
+              <!-- <div class="absolute bottom-0 left-0 w-full p-4 text-left">
+                <h3 class="font-bold text-xl">Maya Indah</h3>
+                <p class="text-gray-300">Customer Support</p>
+              </div> -->
+            </div>
+            <div class="p-4 flex justify-center space-x-4">
+              <a href="#" class="text-gray-400 hover:text-orangeAccent transition-colors duration-300">
+                <i class="bi bi-twitter"></i>
+              </a>
+              <a href="#" class="text-gray-400 hover:text-orangeAccent transition-colors duration-300">
+                <i class="bi bi-linkedin"></i>
+              </a>
+              <a href="#" class="text-gray-400 hover:text-orangeAccent transition-colors duration-300">
+                <i class="bi bi-envelope"></i>
+              </a>
+            </div>
+          </div>
+
+          <div class="glass-effect overflow-hidden rounded-xl shadow-lg card-hover opacity-0 animate-fade-in animate-delay-500">
+            <div class="gradient-overlay relative">
+              <img src="https://drive.google.com/thumbnail?id=1P0Krf4iI6uWE3ISMv3DS2j_EjldibUTQ&sz=w1000" alt="Anggota" class="w-full h-100 object-cover" />
+              <!-- <div class="absolute bottom-0 left-0 w-full p-4 text-left">
+                <h3 class="font-bold text-xl">Maya Indah</h3>
+                <p class="text-gray-300">Customer Support</p>
+              </div> -->
+            </div>
+            <div class="p-4 flex justify-center space-x-4">
+              <a href="#" class="text-gray-400 hover:text-orangeAccent transition-colors duration-300">
+                <i class="bi bi-twitter"></i>
+              </a>
+              <a href="#" class="text-gray-400 hover:text-orangeAccent transition-colors duration-300">
+                <i class="bi bi-linkedin"></i>
+              </a>
+              <a href="#" class="text-gray-400 hover:text-orangeAccent transition-colors duration-300">
+                <i class="bi bi-envelope"></i>
+              </a>
+            </div>
+          </div>
+
+          <div class="glass-effect overflow-hidden rounded-xl shadow-lg card-hover opacity-0 animate-fade-in animate-delay-500">
+            <div class="gradient-overlay relative">
+              <img src="https://drive.google.com/thumbnail?id=1M63B--xyaXtowupFa8Rn9XSR7X8cEpSE&sz=w1000" alt="Anggota" class="w-full h-100 object-cover" />
+              <!-- <div class="absolute bottom-0 left-0 w-full p-4 text-left">
+                <h3 class="font-bold text-xl">Maya Indah</h3>
+                <p class="text-gray-300">Customer Support</p>
+              </div> -->
+            </div>
+            <div class="p-4 flex justify-center space-x-4">
+              <a href="#" class="text-gray-400 hover:text-orangeAccent transition-colors duration-300">
+                <i class="bi bi-twitter"></i>
+              </a>
+              <a href="#" class="text-gray-400 hover:text-orangeAccent transition-colors duration-300">
+                <i class="bi bi-linkedin"></i>
+              </a>
+              <a href="#" class="text-gray-400 hover:text-orangeAccent transition-colors duration-300">
+                <i class="bi bi-envelope"></i>
+              </a>
+            </div>
+          </div>
+
+          <div class="glass-effect overflow-hidden rounded-xl shadow-lg card-hover opacity-0 animate-fade-in animate-delay-500">
+            <div class="gradient-overlay relative">
+              <img src="https://drive.google.com/thumbnail?id=1daoHL2I3xRl10nEgbR8VSH5lePW3duN5&sz=w1000" alt="Anggota" class="w-full h-100 object-cover" />
+              <!-- <div class="absolute bottom-0 left-0 w-full p-4 text-left">
+                <h3 class="font-bold text-xl">Maya Indah</h3>
+                <p class="text-gray-300">Customer Support</p>
+              </div> -->
+            </div>
+            <div class="p-4 flex justify-center space-x-4">
+              <a href="#" class="text-gray-400 hover:text-orangeAccent transition-colors duration-300">
+                <i class="bi bi-twitter"></i>
+              </a>
+              <a href="#" class="text-gray-400 hover:text-orangeAccent transition-colors duration-300">
+                <i class="bi bi-linkedin"></i>
+              </a>
+              <a href="#" class="text-gray-400 hover:text-orangeAccent transition-colors duration-300">
+                <i class="bi bi-envelope"></i>
+              </a>
+            </div>
+          </div>
+
         </div>
       </section>
 
@@ -586,7 +949,7 @@
             <span class="relative z-10">Event</span>
             <span class="absolute -bottom-2 left-0 w-full h-1 bg-orangeAccent rounded-full"></span>
           </h2>
-          <p class="text-gray-400 max-w-xl mx-auto">Event gokil-gokilan</p>
+          <p class="pt-3 text-gray-400 max-w-xl mx-auto">Event gokil-gokilan</p>
         </div>
         
         <div class="max-w-6xl mx-auto">
@@ -595,65 +958,65 @@
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
               <div class="glass-effect rounded-xl overflow-hidden shadow-lg card-hover opacity-0 animate-fade-in animate-delay-100">
                 <div class="gradient-overlay relative">
-                  <img src="/api/placeholder/400/320" alt="Event 1" class="w-full h-48 object-cover" />
-                  <div class="absolute top-4 left-4 bg-orangeAccent px-3 py-1 rounded-full text-sm font-medium">
-                    <i class="bi bi-calendar-check me-1"></i> 15 Juni 2025
-                  </div>
+                  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTTpESVj2NZPjFFqcZjIwxsCA7VZeFb5RwE6g&s" alt="Event 1" class="w-full h-48 object-cover" />
+                    <div class="absolute top-4 left-4 bg-orangeAccent px-3 py-1 rounded-full text-sm font-medium text-[var(--dark-color)]">
+                    <i class="bi bi-calendar-check me-1"></i> 15 Mei 2025
+                    </div>
                 </div>
                 <div class="p-5">
-                  <h3 class="font-bold text-xl mb-2">Digital Marketing Webinar</h3>
+                  <h3 class="font-bold text-xl mb-2">Judge Bersama Keluarga Besar</h3>
                   <p class="text-gray-400 text-sm mb-4">
-                    Belajar strategi pemasaran digital terbaru dan cara mengoptimalkan GLIF Anda.
+                    Nilai bersama, adil, dan mufakat.
                   </p>
                   <div class="flex justify-between items-center">
                     <span class="text-orangeAccent font-medium">
-                      <i class="bi bi-geo-alt me-1"></i> Online
+                      <i class="bi bi-geo-alt me-1"></i> G. People Sound
                     </span>
-                    <a href="#" class="text-sm font-medium hover:text-orangeAccent transition-colors duration-300 flex items-center">
+                    <!-- <a href="#" class="text-sm font-medium hover:text-orangeAccent transition-colors duration-300 flex items-center">
                       Daftar <i class="bi bi-arrow-right ms-1"></i>
-                    </a>
+                    </a> -->
                   </div>
                 </div>
               </div>
               
               <div class="glass-effect rounded-xl overflow-hidden shadow-lg card-hover opacity-0 animate-fade-in animate-delay-200">
                 <div class="gradient-overlay relative">
-                  <img src="/api/placeholder/400/320" alt="Event 2" class="w-full h-48 object-cover" />
-                  <div class="absolute top-4 left-4 bg-orangeAccent px-3 py-1 rounded-full text-sm font-medium">
+                  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR18pBhn3czaXKbe4dQ_weIEIezlunJVaK9YQ&s" alt="Event 2" class="w-full h-48 object-cover" />
+                  <div class="absolute top-4 left-4 bg-orangeAccent px-3 py-1 rounded-full text-sm font-medium text-[var(--dark-color)]">
                     <i class="bi bi-calendar-check me-1"></i> 22 Juli 2025
                   </div>
                 </div>
                 <div class="p-5">
-                  <h3 class="font-bold text-xl mb-2">Link Analytics Workshop</h3>
+                  <h3 class="font-bold text-xl mb-2">Bazzar Jualan Es</h3>
                   <p class="text-gray-400 text-sm mb-4">
-                    Workshop cara membaca dan menganalisis data dari GLIF untuk pengambilan keputusan.
+                    Kalo yang jualan balon disamping, kita jualan es.
                   </p>
                   <div class="flex justify-between items-center">
                     <span class="text-orangeAccent font-medium">
                       <i class="bi bi-geo-alt me-1"></i> Jakarta
                     </span>
-                    <a href="#" class="text-sm font-medium hover:text-orangeAccent transition-colors duration-300 flex items-center">
+                    <!-- <a href="#" class="text-sm font-medium hover:text-orangeAccent transition-colors duration-300 flex items-center">
                       Daftar <i class="bi bi-arrow-right ms-1"></i>
-                    </a>
+                    </a> -->
                   </div>
                 </div>
               </div>
               
               <div class="glass-effect rounded-xl overflow-hidden shadow-lg card-hover opacity-0 animate-fade-in animate-delay-300">
                 <div class="gradient-overlay relative">
-                  <img src="/api/placeholder/400/320" alt="Event 3" class="w-full h-48 object-cover" />
-                  <div class="absolute top-4 left-4 bg-orangeAccent px-3 py-1 rounded-full text-sm font-medium">
-                    <i class="bi bi-calendar-check me-1"></i> 10 Agustus 2025
+                  <img src="https://radarlambar.bacakoran.co/upload/051ef24b5d6438f4adc93651295e1ace.jpg" alt="Event 3" class="w-full h-48 object-cover" />
+                  <div class="absolute top-4 left-4 bg-orangeAccent px-3 py-1 rounded-full text-sm font-medium text-[var(--dark-color)]">
+                    <i class="bi bi-calendar-check me-1"></i> 17 Agustus 2025
                   </div>
                 </div>
                 <div class="p-5">
-                  <h3 class="font-bold text-xl mb-2">Content Creation Summit</h3>
+                  <h3 class="font-bold text-xl mb-2">Hidup [REDACTED]</h3>
                   <p class="text-gray-400 text-sm mb-4">
-                    Pelajari strategi membuat konten yang menarik dan cara meningkatkan engagement.
+                    Merdeka! Merdeka! Merdeka!
                   </p>
                   <div class="flex justify-between items-center">
                     <span class="text-orangeAccent font-medium">
-                      <i class="bi bi-geo-alt me-1"></i> Bandung
+                      <i class="bi bi-geo-alt me-1"></i> Istana Presiden
                     </span>
                     <a href="#" class="text-sm font-medium hover:text-orangeAccent transition-colors duration-300 flex items-center">
                       Daftar <i class="bi bi-arrow-right ms-1"></i>
@@ -823,18 +1186,18 @@
               Komunitan inklusif dan ekslusif yang berfokus pada pengembangan diri dan kolaborasi.
             </p>
             <div class="flex space-x-4">
-              <a href="#" class="text-gray-400 hover:text-orangeAccent transition-colors duration-300">
+              <!-- <a href="#" class="text-gray-400 hover:text-orangeAccent transition-colors duration-300">
                 <i class="bi bi-twitter text-xl"></i>
-              </a>
-              <a href="#" class="text-gray-400 hover:text-orangeAccent transition-colors duration-300">
+              </a> -->
+              <a href="https://www.instagram.com/glideinside" class="text-gray-400 hover:text-orangeAccent transition-colors duration-300">
                 <i class="bi bi-instagram text-xl"></i>
-              </a>
+              <!-- </a>
               <a href="#" class="text-gray-400 hover:text-orangeAccent transition-colors duration-300">
                 <i class="bi bi-github text-xl"></i>
-              </a>
-              <a href="#" class="text-gray-400 hover:text-orangeAccent transition-colors duration-300">
+              </a> -->
+              <!-- <a href="#" class="text-gray-400 hover:text-orangeAccent transition-colors duration-300">
                 <i class="bi bi-linkedin text-xl"></i>
-              </a>
+              </a> -->
             </div>
           </div>
 
@@ -860,7 +1223,14 @@
         </div> -->
 
         <div class="border-t border-gray-800 mt-8 pt-8 flex flex-col md:flex-row justify-between items-center">
-          <p class="text-gray-500 text-sm">© 2025 GLIF. All rights reserved.</p>
+          <div>
+    &copy;
+    <span id="copyright">
+        <script>document.getElementById('copyright').appendChild(document.createTextNode(new Date().getFullYear()))</script>
+    </span>
+    Glif - GlideFrame
+    </br> Powered by OpenStudio
+    </div>
           <!-- <div class="flex space-x-4 mt-4 md:mt-0">
             <a href="#" class="text-gray-500 hover:text-orangeAccent text-sm transition-colors duration-300">Syarat & Ketentuan</a>
             <a href="#" class="text-gray-500 hover:text-orangeAccent text-sm transition-colors duration-300">Kebijakan Privasi</a>
@@ -870,7 +1240,7 @@
     </footer>
 
     <!-- Back to Top Button -->
-    <button id="back-to-top" class="fixed bottom-8 right-8 p-3 rounded-full bg-orangeAccent text-white opacity-0 invisible transition-all duration-300 hover:scale-110 focus:outline-none">
+    <button id="back-to-top" class="fixed bottom-12 right-8 p-3 rounded-full bg-orangeAccent text-white opacity-0 invisible transition-all duration-300 hover:scale-110 focus:outline-none">
       <i class="bi bi-arrow-up"></i>
     </button>
 
