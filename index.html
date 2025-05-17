@@ -64,7 +64,7 @@
 
     @font-face {
       font-family: NAURYZREDKEDS;
-      src: url(assets\fonts\NAURYZREDKEDS.ttf);
+      src: url(/assets/fonts/NAURYZREDKEDS.ttf);
     }
 
     @font-face {
@@ -458,6 +458,51 @@
     .animate-arrow-move-down {
       animation: arrow-move-down 1s infinite;
     }
+
+    @keyframes bounceIn {
+      0% {
+        opacity: 0;
+        transform: scale(0.7);
+      }
+
+      60% {
+        opacity: 1;
+        transform: scale(1.05);
+      }
+
+      80% {
+        transform: scale(0.98);
+      }
+
+      100% {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+
+    @keyframes bounceOut {
+      0% {
+        opacity: 1;
+        transform: scale(1);
+      }
+
+      20% {
+        transform: scale(1.05);
+      }
+
+      100% {
+        opacity: 0;
+        transform: scale(0.7);
+      }
+    }
+
+    .animate-bounce-in {
+      animation: bounceIn 0.5s cubic-bezier(.68, -0.55, .27, 1.55) forwards;
+    }
+
+    .animate-bounce-out {
+      animation: bounceOut 0.4s cubic-bezier(.68, -0.55, .27, 1.55) forwards;
+    }
   </style>
 </head>
 
@@ -499,7 +544,7 @@
           aria-label="Toggle menu">
           <i class="bi bi-list text-3xl"></i>
         </button>
-        <div id="menu" class="absolute right-4 top-20 glass-effect p-5 rounded-xl space-y-4 hidden">
+        <div id="menu" class="glass-effect absolute right-4 top-20 p-5 rounded-xl space-y-4 hidden">
           <a href="#home"
             class="menu-item flex items-center space-x-3 text-lightText hover:text-orangeAccent transition-colors duration-300">
             <i class="bi bi-house-door-fill"></i>
@@ -570,10 +615,10 @@
           <span>Submission : Next G</span>
         </a>
 
-        <a href="#event"
-          class="btn-accent flex items-center justify-center px-6 py-3 rounded-full text-white space-x-2">
+        <a id="agen-balon-btn"
+          class="cursor-pointer btn-accent flex items-center justify-center px-6 py-3 rounded-full text-white space-x-2">
           <i class="bi bi-person-fill"></i>
-          <span>Agen Jualan Balon</span>
+          <span>Changelog</span>
         </a>
 
         <!-- <a href="#" class="btn-accent flex items-center justify-center px-6 py-3 rounded-full text-white space-x-2 glow-on-hover">
@@ -1289,29 +1334,29 @@
         </div>
       </div>
 
-              <div id="show-all-anggota" class="mt-8 text-center opacity-0 animate-fade-in animate-delay-400">
-          <a id="toggle-anggota-btn"
-            class="btn-accent inline-flex items-center justify-center px-6 py-3 rounded-full text-white space-x-2">
-            <span class="flex -space-x-3">
-              <img src="https://drive.google.com/thumbnail?id=1dv4oheV6u-YXoBL0z8aQVNwwjixUAuXN&sz=w1000"
-                class="w-9 h-9 rounded-full object-cover" alt="Avatar" />
-              <img src="https://drive.google.com/thumbnail?id=18Jx3yQykRYSYoCPVY64tu9bNnU791Lnw&sz=w1000"
-                class="w-9 h-9 rounded-full object-cover" alt="Avatar" />
-              <img src="https://drive.google.com/thumbnail?id=1khenXHfXfFgFCf80kXgJhUXV8fqAvP2w&sz=w1000"
-                class="w-9 h-9 rounded-full shadow object-cover" alt="Avatar" />
-              <img src="https://drive.google.com/thumbnail?id=1PJj95Yt8wx-N4Qai3wIBaJTcICGBVb6W&sz=w1000"
-                class="w-9 h-9 rounded-full shadow object-cover" alt="Avatar" />
-            </span>
-            <!-- Teks -->
-            <span id="toggle-anggota-text" class="transition-all duration-200">
-              Lihat Semua Anggota
-            </span>
-            <!-- Icon Arrow Kanan dengan animasi -->
-            <span id="toggle-anggota-icon" class="relative flex items-center">
-              <i class="bi bi-arrow-down text-xl animate-arrow-move-down"></i>
-            </span>
-          </a>
-        </div>
+      <div id="show-all-anggota" class="cursor-pointer mt-8 text-center opacity-0 animate-fade-in animate-delay-400">
+        <a id="toggle-anggota-btn"
+          class="btn-accent inline-flex items-center justify-center px-6 py-3 rounded-full text-white space-x-2">
+          <span class="flex -space-x-3">
+            <img src="https://drive.google.com/thumbnail?id=1dv4oheV6u-YXoBL0z8aQVNwwjixUAuXN&sz=w1000"
+              class="w-9 h-9 rounded-full object-cover" alt="Avatar" />
+            <img src="https://drive.google.com/thumbnail?id=18Jx3yQykRYSYoCPVY64tu9bNnU791Lnw&sz=w1000"
+              class="w-9 h-9 rounded-full object-cover" alt="Avatar" />
+            <img src="https://drive.google.com/thumbnail?id=1khenXHfXfFgFCf80kXgJhUXV8fqAvP2w&sz=w1000"
+              class="w-9 h-9 rounded-full shadow object-cover" alt="Avatar" />
+            <img src="https://drive.google.com/thumbnail?id=1PJj95Yt8wx-N4Qai3wIBaJTcICGBVb6W&sz=w1000"
+              class="w-9 h-9 rounded-full shadow object-cover" alt="Avatar" />
+          </span>
+          <!-- Teks -->
+          <span id="toggle-anggota-text" class="transition-all duration-200">
+            Lihat Semua Anggota
+          </span>
+          <!-- Icon Arrow Kanan dengan animasi -->
+          <span id="toggle-anggota-icon" class="relative flex items-center">
+            <i class="bi bi-arrow-down text-xl animate-arrow-move-down"></i>
+          </span>
+        </a>
+      </div>
 
       <div class="text-center">
         <p class="pt-3 text-gray-400 max-w-xl mx-auto">Last updated : 17/05/25 11:35</p>
@@ -1564,101 +1609,28 @@
   <!-- Toasts will be dynamically added here -->
   </div>
 
-  <script>
-    function showToast(message, type = 'success') {
-      const container = document.getElementById('toast-container');
-      const toast = document.createElement('div');
+  <!-- Popup Changelog -->
+<div id="changelog-popup-overlay"
+  class="fixed inset-0 z-50 bg-black/60 flex items-center justify-center transition-all duration-300 opacity-0 pointer-events-none">
+  <div
+    id="changelog-popup"
+    class="relative glass-effect rounded-2xl shadow-lg p-8 w-full max-w-lg max-h-[90vh] overflow-y-auto text-left animate-bounce-in">
+    <!-- Close Button -->
+    <button id="close-changelog-popup"
+      class="absolute top-3 right-3 text-gray-400 hover:text-orangeAccent text-2xl focus:outline-none">
+      <i class="bi bi-x-lg"></i>
+    </button>
+    <h3 class="font-nauryz text-2xl mb-4 text-orangeAccent">Changelog Website</h3>
+    <ul class="list-disc pl-5 space-y-2 text-gray-200 font-space">
+      <li>17 Mei 2025: Penambahan fitur popup changelog dan toggle anggota. Hanya menampilkan 4 anggota saja agar tidak menambahkan lag saat pertama kali membuka website, untuk menampilkan semua klik tombol "Lihat Semua Anggota"</li>
+      <li>16 Mei 2025: Perbaikan animasi tombol dan grid anggota.</li>
+      <li>15 Mei 2025: Penambahan event baru dan update tampilan.</li>
+      <li>14 Mei 2025: Rilis awal website GLIF Centrum.</li>
+    </ul>
+  </div>
+</div>
 
-      // Enhanced base classes with smoother transitions
-      const baseClasses = 'max-w-xs px-4 py-3 rounded-lg shadow-lg transform transition-all duration-500 ease-in-out flex items-center gap-2 glass-effect opacity-0 scale-95';
-      const typeClasses = {
-        success: 'border-l-4 border-green-500',
-        error: 'border-l-4 border-red-500',
-        warning: 'border-l-4 border-yellow-500',
-        info: 'border-l-4 border-orangeAccent'
-      };
 
-      toast.className = `${baseClasses} ${typeClasses[type]} translate-x-full`;
-
-      const icons = {
-        success: 'bi-check-circle-fill text-green-500',
-        error: 'bi-x-circle-fill text-red-500',
-        warning: 'bi-exclamation-circle-fill text-yellow-500',
-        info: 'bi-info-circle-fill text-orangeAccent'
-      };
-
-      toast.innerHTML = `
-        <i class="bi ${icons[type]}"></i>
-        <span class="text-sm font-space">${message}</span>
-      `;
-
-      container.appendChild(toast);
-
-      // Smooth enter animation with multiple properties
-      requestAnimationFrame(() => {
-        toast.classList.remove('translate-x-full', 'opacity-0', 'scale-95');
-        toast.classList.add('translate-x-0', 'opacity-100', 'scale-100');
-      });
-
-      // Smooth exit animation
-      setTimeout(() => {
-        toast.classList.add('translate-x-full', 'opacity-0', 'scale-95');
-        toast.classList.remove('translate-x-0', 'opacity-100', 'scale-100');
-
-        // Remove element after animation completes
-        setTimeout(() => {
-          container.removeChild(toast);
-        }, 500); // Match duration-500
-      }, 3000);
-    }
-
-    // Example usage:
-    // showToast('Operation successful!', 'success');
-    // showToast('Something went wrong!', 'error');
-    // showToast('Please be careful!', 'warning');
-    // showToast('Just letting you know...', 'info');
-  </script>
-
-  <script>
-    // Tampilkan hanya 4 anggota pertama, toggle tampil semua/perkecil
-    document.addEventListener('DOMContentLoaded', function () {
-      const cards = document.querySelectorAll('.anggota-card');
-      const showAllBtn = document.getElementById('show-all-anggota');
-      const toggleBtn = document.getElementById('toggle-anggota-btn');
-      const toggleText = document.getElementById('toggle-anggota-text');
-      const toggleIcon = document.getElementById('toggle-anggota-icon');
-      let expanded = false;
-
-      function showFirstFour() {
-        cards.forEach((card, i) => {
-          card.style.display = i < 4 ? '' : 'none';
-        });
-        toggleText.textContent = 'Lihat Semua Anggota';
-        toggleIcon.innerHTML = '<i class="bi bi-arrow-down text-xl animate-arrow-move-down"></i>';
-        expanded = false;
-      }
-
-      function showAll() {
-        cards.forEach(card => card.style.display = '');
-        toggleText.textContent = 'Perkecil';
-        toggleIcon.innerHTML = '<i class="bi bi-arrow-up text-xl"></i>';
-        expanded = true;
-      }
-
-      if (cards.length <= 4) {
-        showAllBtn.style.display = 'none';
-      } else {
-        showFirstFour();
-        toggleBtn.addEventListener('click', function () {
-          if (expanded) {
-            showFirstFour();
-          } else {
-            showAll();
-          }
-        });
-      }
-    });
-  </script>
 
   <!-- Footer -->
   <footer class="px-4 py-10 border-t border-gray-800 font-space">
@@ -1744,6 +1716,151 @@
 
   <!-- Scripts -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+  
+  <!-- POPUP -->
+  <script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const popupOverlay = document.getElementById('changelog-popup-overlay');
+    const closeBtn = document.getElementById('close-changelog-popup');
+    const agenBtn = document.getElementById('agen-balon-btn');
+    const popup = document.getElementById('changelog-popup');
+
+    if (agenBtn) {
+      agenBtn.addEventListener('click', function (e) {
+        e.preventDefault();
+        popupOverlay.classList.remove('opacity-0', 'pointer-events-none');
+        popupOverlay.classList.add('opacity-100');
+        popup.classList.remove('animate-bounce-out');
+        popup.classList.add('animate-bounce-in');
+      });
+    }
+
+    // Close popup with X
+    if (closeBtn) {
+      closeBtn.addEventListener('click', function () {
+        popup.classList.remove('animate-bounce-in');
+        popup.classList.add('animate-bounce-out');
+        setTimeout(() => {
+          popupOverlay.classList.add('opacity-0', 'pointer-events-none');
+          popupOverlay.classList.remove('opacity-100');
+        }, 400); // match bounceOut duration
+      });
+    }
+
+    // Close popup by clicking outside
+    if (popupOverlay) {
+      popupOverlay.addEventListener('mousedown', function (e) {
+        if (e.target === this) {
+          popup.classList.remove('animate-bounce-in');
+          popup.classList.add('animate-bounce-out');
+          setTimeout(() => {
+            popupOverlay.classList.add('opacity-0', 'pointer-events-none');
+            popupOverlay.classList.remove('opacity-100');
+          }, 400);
+        }
+      });
+    }
+  });
+</script>
+
+  <!-- SHOW ALL -->
+  <script>
+    // Tampilkan hanya 4 anggota pertama, toggle tampil semua/perkecil
+    document.addEventListener('DOMContentLoaded', function () {
+      const cards = document.querySelectorAll('.anggota-card');
+      const showAllBtn = document.getElementById('show-all-anggota');
+      const toggleBtn = document.getElementById('toggle-anggota-btn');
+      const toggleText = document.getElementById('toggle-anggota-text');
+      const toggleIcon = document.getElementById('toggle-anggota-icon');
+      let expanded = false;
+
+      function showFirstFour() {
+        cards.forEach((card, i) => {
+          card.style.display = i < 4 ? '' : 'none';
+        });
+        toggleText.textContent = 'Lihat Semua Anggota';
+        toggleIcon.innerHTML = '<i class="bi bi-arrow-down text-xl animate-arrow-move-down"></i>';
+        expanded = false;
+      }
+
+      function showAll() {
+        cards.forEach(card => card.style.display = '');
+        toggleText.textContent = 'Perkecil';
+        toggleIcon.innerHTML = '<i class="bi bi-arrow-up text-xl"></i>';
+        expanded = true;
+      }
+
+      if (cards.length <= 4) {
+        showAllBtn.style.display = 'none';
+      } else {
+        showFirstFour();
+        toggleBtn.addEventListener('click', function () {
+          if (expanded) {
+            showFirstFour();
+          } else {
+            showAll();
+          }
+        });
+      }
+    });
+  </script>
+
+  <!-- TOAST -->
+  <script>
+    function showToast(message, type = 'success') {
+      const container = document.getElementById('toast-container');
+      const toast = document.createElement('div');
+
+      // Enhanced base classes with smoother transitions
+      const baseClasses = 'max-w-xs px-4 py-3 rounded-lg shadow-lg transform transition-all duration-500 ease-in-out flex items-center gap-2 glass-effect opacity-0 scale-95';
+      const typeClasses = {
+        success: 'border-l-4 border-green-500',
+        error: 'border-l-4 border-red-500',
+        warning: 'border-l-4 border-yellow-500',
+        info: 'border-l-4 border-orangeAccent'
+      };
+
+      toast.className = `${baseClasses} ${typeClasses[type]} translate-x-full`;
+
+      const icons = {
+        success: 'bi-check-circle-fill text-green-500',
+        error: 'bi-x-circle-fill text-red-500',
+        warning: 'bi-exclamation-circle-fill text-yellow-500',
+        info: 'bi-info-circle-fill text-orangeAccent'
+      };
+
+      toast.innerHTML = `
+        <i class="bi ${icons[type]}"></i>
+        <span class="text-sm font-space">${message}</span>
+      `;
+
+      container.appendChild(toast);
+
+      // Smooth enter animation with multiple properties
+      requestAnimationFrame(() => {
+        toast.classList.remove('translate-x-full', 'opacity-0', 'scale-95');
+        toast.classList.add('translate-x-0', 'opacity-100', 'scale-100');
+      });
+
+      // Smooth exit animation
+      setTimeout(() => {
+        toast.classList.add('translate-x-full', 'opacity-0', 'scale-95');
+        toast.classList.remove('translate-x-0', 'opacity-100', 'scale-100');
+
+        // Remove element after animation completes
+        setTimeout(() => {
+          container.removeChild(toast);
+        }, 500); // Match duration-500
+      }, 3000);
+    }
+
+    // Example usage:
+    // showToast('Operation successful!', 'success');
+    // showToast('Something went wrong!', 'error');
+    // showToast('Please be careful!', 'warning');
+    // showToast('Just letting you know...', 'info');
+  </script>
+
   <script>
     // Preloader 
     window.addEventListener('load', function () {
