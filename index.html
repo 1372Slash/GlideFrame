@@ -100,36 +100,49 @@
       }
       
       .btn-accent {
-        background: linear-gradient(90deg, #FF5722 0%, #FF7043 100%);
-        border: none;
-        color: white;
-        font-weight: 500;
-        position: relative;
-        overflow: hidden;
-        z-index: 1;
-        transition: all 0.3s ease;
-      }
-      
-      .btn-accent::before {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: -100%;
-        width: 100%;
-        height: 100%;
-        background: linear-gradient(90deg, transparent 0%, rgba(255, 255, 255, 0.3) 50%, transparent 100%);
-        transition: all 0.6s ease;
-        z-index: -1;
-      }
-      
-      .btn-accent:hover::before {
-        left: 100%;
-      }
-      
-      .btn-accent:hover {
-        box-shadow: 0 5px 15px rgba(255, 87, 34, 0.4);
-        transform: translateY(-2px);
-      }
+  background: linear-gradient(90deg, #ff5722 0%, #ff7043 100%);
+  border: none;
+  color: white;
+  font-weight: 500;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+  transition: all 0.3s ease;
+}
+
+.btn-accent::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.3) 50%,
+    transparent 100%
+  );
+  transition: all 0.6s ease;
+  z-index: -1;
+}
+
+.btn-accent:hover::before {
+  left: 100%;
+}
+
+.btn-accent:hover {
+  box-shadow: 0 5px 15px rgba(255, 87, 34, 0.4);
+  transform: translateY(-2px);
+}
+
+.btn-nonactive {
+  transition: all 0.3s ease;
+}
+.btn-nonactive:hover {
+  /* box-shadow: 0 5px 15px rgba(255, 87, 34, 0.4); */
+  transform: translateY(-2px);
+}
       
       .menu-item {
         position: relative;
@@ -176,7 +189,7 @@
         animation-delay: 0.4s;
       }
       
-      .animate-delay-500 {
+      .animate-delay-100 {
         animation-delay: 0.5s;
       }
       
@@ -377,6 +390,36 @@
   }
 }
 
+.glow-on-hover {
+  box-shadow: 0 0 0 0 rgba(255, 87, 34, 0);
+  transition: box-shadow 0.3s ease;
+}
+
+.glow-on-hover:hover {
+  box-shadow: 0 0 10px 2px rgba(255, 87, 34, 0.4);
+}
+
+.shine-effect::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.3) 50%,
+    transparent 100%
+  );
+  transition: all 0.5s ease;
+  z-index: -1;
+}
+
+.shine-effect:hover::before {
+  left: 100%;
+}
+
     </style>
   </head>
   <body class="bg-darkBg text-lightText font-sans">
@@ -467,12 +510,12 @@
         </div>
         
         <div class="grid grid-cols-1 md:grid-cols-2 gap-4 w-full max-w-lg mx-auto opacity-0 animate-slide-up animate-delay-400">
-          <a href="https://forms.gle/P2Cz79JQYtek1Y7H7" class="btn-accent flex items-center justify-center px-6 py-3 rounded-full text-white space-x-2 glow-on-hover">
+          <a href="https://forms.gle/P2Cz79JQYtek1Y7H7" class="btn-accent flex items-center justify-center px-6 py-3 rounded-full text-white space-x-2">
             <i class="bi bi-send-fill"></i>
             <span>Submission : Next G</span>
           </a>
 
-          <a href="#event" class="btn-accent flex items-center justify-center px-6 py-3 rounded-full text-white space-x-2 glow-on-hover">
+          <a href="#event" class="btn-accent flex items-center justify-center px-6 py-3 rounded-full text-white space-x-2">
             <i class="bi bi-person-fill"></i>
             <span>Agen Jualan Balon</span>
           </a>
@@ -506,8 +549,10 @@
           <p class="pt-3 text-gray-400 max-w-xl mx-auto">Kami berjalan sebagai tim.</p>
         </div>
         
+
+
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
-          <div class="glass-effect overflow-hidden rounded-xl shadow-lg card-hover opacity-0 animate-fade-in animate-delay-100">
+          <div class="glass-effect overflow-hidden rounded-xl shadow-lg card-hover opacity-0 animate-fade-in animate-delay-100 shine-effect">
             <div class="gradient-overlay relative">
               <img src="https://drive.google.com/thumbnail?id=1JVl8LMOohrXHnfNHlqTFrTvw8ZBGWaVy&sz=w1000" alt="Anggota" class="w-full h-100 object-cover" />
             </div>
@@ -524,7 +569,7 @@
             </div>
           </div>
           
-          <div class="glass-effect overflow-hidden rounded-xl shadow-lg card-hover opacity-0 animate-fade-in animate-delay-200">
+          <div class="glass-effect overflow-hidden rounded-xl shadow-lg card-hover opacity-0 animate-fade-in animate-delay-100 shine-effect">
             <div class="gradient-overlay relative">
               <img src="https://drive.google.com/thumbnail?id=1UJwjkALnYVymlinbIx7h_ynjHx2MRH6C&sz=w1000" alt="Anggota" class="w-full h-100 object-cover" />
             </div>
@@ -541,7 +586,7 @@
             </div>
           </div>
           
-          <div class="glass-effect overflow-hidden rounded-xl shadow-lg card-hover opacity-0 animate-fade-in animate-delay-300">
+          <div class="glass-effect overflow-hidden rounded-xl shadow-lg card-hover opacity-0 animate-fade-in animate-delay-100 shine-effect">
             <div class="gradient-overlay relative">
               <img src="https://drive.google.com/thumbnail?id=1I0ccHH_1Q03w1ThmJpoGUgqEZHtqJPUf&sz=w1000" alt="Anggota" class="w-full h-100 object-cover" />
               <!-- <div class="absolute bottom-0 left-0 w-full p-4 text-left">
@@ -562,7 +607,7 @@
             </div>
           </div>
           
-          <div class="glass-effect overflow-hidden rounded-xl shadow-lg card-hover opacity-0 animate-fade-in animate-delay-400">
+          <div class="glass-effect overflow-hidden rounded-xl shadow-lg card-hover opacity-0 animate-fade-in animate-delay-100 shine-effect">
             <div class="gradient-overlay relative">
               <img src="https://drive.google.com/thumbnail?id=1uQB7ixh1ai6qQnO_6YU7mcyEZwXbJToV&sz=w1000" alt="Anggota" class="w-full h-100 object-cover" />
               <!-- <div class="absolute bottom-0 left-0 w-full p-4 text-left">
@@ -583,7 +628,7 @@
             </div>
           </div>
           
-          <div class="glass-effect overflow-hidden rounded-xl shadow-lg card-hover opacity-0 animate-fade-in animate-delay-500">
+          <div class="glass-effect overflow-hidden rounded-xl shadow-lg card-hover opacity-0 animate-fade-in animate-delay-100 shine-effect">
             <div class="gradient-overlay relative">
               <img src="https://drive.google.com/thumbnail?id=1dv4oheV6u-YXoBL0z8aQVNwwjixUAuXN&sz=w1000" alt="Anggota" class="w-full h-100 object-cover" />
               <!-- <div class="absolute bottom-0 left-0 w-full p-4 text-left">
@@ -604,7 +649,7 @@
             </div>
           </div>
           
-          <div class="glass-effect overflow-hidden rounded-xl shadow-lg card-hover opacity-0 animate-fade-in animate-delay-500">
+          <div class="glass-effect overflow-hidden rounded-xl shadow-lg card-hover opacity-0 animate-fade-in animate-delay-100 shine-effect">
             <div class="gradient-overlay relative">
               <img src="https://drive.google.com/thumbnail?id=18Jx3yQykRYSYoCPVY64tu9bNnU791Lnw&sz=w1000" alt="Anggota" class="w-full h-100 object-cover" />
               <!-- <div class="absolute bottom-0 left-0 w-full p-4 text-left">
@@ -625,7 +670,7 @@
             </div>
           </div>
 
-          <div class="glass-effect overflow-hidden rounded-xl shadow-lg card-hover opacity-0 animate-fade-in animate-delay-500">
+          <div class="glass-effect overflow-hidden rounded-xl shadow-lg card-hover opacity-0 animate-fade-in animate-delay-100 shine-effect">
             <div class="gradient-overlay relative">
               <img src="https://drive.google.com/thumbnail?id=1khenXHfXfFgFCf80kXgJhUXV8fqAvP2w&sz=w1000" alt="Anggota" class="w-full h-100 object-cover" />
               <!-- <div class="absolute bottom-0 left-0 w-full p-4 text-left">
@@ -646,7 +691,7 @@
             </div>
           </div>
 
-          <div class="glass-effect overflow-hidden rounded-xl shadow-lg card-hover opacity-0 animate-fade-in animate-delay-500">
+          <div class="glass-effect overflow-hidden rounded-xl shadow-lg card-hover opacity-0 animate-fade-in animate-delay-100 shine-effect">
             <div class="gradient-overlay relative">
               <img src="https://drive.google.com/thumbnail?id=1PJj95Yt8wx-N4Qai3wIBaJTcICGBVb6W&sz=w1000" alt="Anggota" class="w-full h-100 object-cover" />
               <!-- <div class="absolute bottom-0 left-0 w-full p-4 text-left">
@@ -667,7 +712,7 @@
             </div>
           </div>
 
-          <div class="glass-effect overflow-hidden rounded-xl shadow-lg card-hover opacity-0 animate-fade-in animate-delay-500">
+          <div class="glass-effect overflow-hidden rounded-xl shadow-lg card-hover opacity-0 animate-fade-in animate-delay-100 shine-effect">
             <div class="gradient-overlay relative">
               <img src="https://drive.google.com/thumbnail?id=1UTUd9lxJhjkXgOBt-Vz0dnWh3vrGgy6w&sz=w1000" alt="Anggota" class="w-full h-100 object-cover" />
               <!-- <div class="absolute bottom-0 left-0 w-full p-4 text-left">
@@ -688,7 +733,7 @@
             </div>
           </div>
 
-          <div class="glass-effect overflow-hidden rounded-xl shadow-lg card-hover opacity-0 animate-fade-in animate-delay-500">
+          <div class="glass-effect overflow-hidden rounded-xl shadow-lg card-hover opacity-0 animate-fade-in animate-delay-100 shine-effect">
             <div class="gradient-overlay relative">
               <img src="https://drive.google.com/thumbnail?id=1IXCO8q7DiZikrS7JLY6MWUd1gzI8zsdD&sz=w1000" alt="Anggota" class="w-full h-100 object-cover" />
               <!-- <div class="absolute bottom-0 left-0 w-full p-4 text-left">
@@ -709,7 +754,7 @@
             </div>
           </div>
 
-          <div class="glass-effect overflow-hidden rounded-xl shadow-lg card-hover opacity-0 animate-fade-in animate-delay-500">
+          <div class="glass-effect overflow-hidden rounded-xl shadow-lg card-hover opacity-0 animate-fade-in animate-delay-100 shine-effect">
             <div class="gradient-overlay relative">
               <img src="https://drive.google.com/thumbnail?id=1Ixl9fPYaiOkoX-CO_DF5lDhvJfF7T8Bq&sz=w1000" alt="Anggota" class="w-full h-100 object-cover" />
               <!-- <div class="absolute bottom-0 left-0 w-full p-4 text-left">
@@ -730,7 +775,7 @@
             </div>
           </div>
 
-          <div class="glass-effect overflow-hidden rounded-xl shadow-lg card-hover opacity-0 animate-fade-in animate-delay-500">
+          <div class="glass-effect overflow-hidden rounded-xl shadow-lg card-hover opacity-0 animate-fade-in animate-delay-100 shine-effect">
             <div class="gradient-overlay relative">
               <img src="https://drive.google.com/thumbnail?id=1f3DCdKDj9fIIUDcFHprSQ2qifF-4wKpj&sz=w1000" alt="Anggota" class="w-full h-100 object-cover" />
               <!-- <div class="absolute bottom-0 left-0 w-full p-4 text-left">
@@ -751,7 +796,7 @@
             </div>
           </div>
 
-          <div class="glass-effect overflow-hidden rounded-xl shadow-lg card-hover opacity-0 animate-fade-in animate-delay-500">
+          <div class="glass-effect overflow-hidden rounded-xl shadow-lg card-hover opacity-0 animate-fade-in animate-delay-100 shine-effect">
             <div class="gradient-overlay relative">
               <img src="https://drive.google.com/thumbnail?id=1sPOnc0MLPuoNvhHWzRXpL9B6lqiyUIFs&sz=w1000" alt="Anggota" class="w-full h-100 object-cover" />
               <!-- <div class="absolute bottom-0 left-0 w-full p-4 text-left">
@@ -772,7 +817,7 @@
             </div>
           </div>
 
-          <div class="glass-effect overflow-hidden rounded-xl shadow-lg card-hover opacity-0 animate-fade-in animate-delay-500">
+          <div class="glass-effect overflow-hidden rounded-xl shadow-lg card-hover opacity-0 animate-fade-in animate-delay-100 shine-effect">
             <div class="gradient-overlay relative">
               <img src="https://drive.google.com/thumbnail?id=1zi41rDyn_PoqFJ8faWcC2dNffwm061QG&sz=w1000" alt="Anggota" class="w-full h-100 object-cover" />
               <!-- <div class="absolute bottom-0 left-0 w-full p-4 text-left">
@@ -793,7 +838,7 @@
             </div>
           </div>
 
-          <div class="glass-effect overflow-hidden rounded-xl shadow-lg card-hover opacity-0 animate-fade-in animate-delay-500">
+          <div class="glass-effect overflow-hidden rounded-xl shadow-lg card-hover opacity-0 animate-fade-in animate-delay-100 shine-effect">
             <div class="gradient-overlay relative">
               <img src="https://drive.google.com/thumbnail?id=1SxLQ1Novlhboxw9qYNHj0bA8U1g2WQtU&sz=w1000" alt="Anggota" class="w-full h-100 object-cover" />
               <!-- <div class="absolute bottom-0 left-0 w-full p-4 text-left">
@@ -814,7 +859,7 @@
             </div>
           </div>
 
-          <div class="glass-effect overflow-hidden rounded-xl shadow-lg card-hover opacity-0 animate-fade-in animate-delay-500">
+          <div class="glass-effect overflow-hidden rounded-xl shadow-lg card-hover opacity-0 animate-fade-in animate-delay-100 shine-effect">
             <div class="gradient-overlay relative">
               <img src="https://drive.google.com/thumbnail?id=1hj79N1crfTtasrfMFDaP1is5SMaKQ10m&sz=w1000" alt="Anggota" class="w-full h-100 object-cover" />
               <!-- <div class="absolute bottom-0 left-0 w-full p-4 text-left">
@@ -835,7 +880,7 @@
             </div>
           </div>
 
-          <div class="glass-effect overflow-hidden rounded-xl shadow-lg card-hover opacity-0 animate-fade-in animate-delay-500">
+          <div class="glass-effect overflow-hidden rounded-xl shadow-lg card-hover opacity-0 animate-fade-in animate-delay-100 shine-effect">
             <div class="gradient-overlay relative">
               <img src="https://drive.google.com/thumbnail?id=1w66ssHnlPRJm8DgcopxxkOg-olmQGBl4&sz=w1000" alt="Anggota" class="w-full h-100 object-cover" />
               <!-- <div class="absolute bottom-0 left-0 w-full p-4 text-left">
@@ -856,7 +901,7 @@
             </div>
           </div>
 
-          <div class="glass-effect overflow-hidden rounded-xl shadow-lg card-hover opacity-0 animate-fade-in animate-delay-500">
+          <div class="glass-effect overflow-hidden rounded-xl shadow-lg card-hover opacity-0 animate-fade-in animate-delay-100 shine-effect">
             <div class="gradient-overlay relative">
               <img src="https://drive.google.com/thumbnail?id=1YyXuLceJxD0z0dEPd7QJg689GAh-Wkpd&sz=w1000" alt="Anggota" class="w-full h-100 object-cover" />
               <!-- <div class="absolute bottom-0 left-0 w-full p-4 text-left">
@@ -877,7 +922,7 @@
             </div>
           </div>
 
-          <div class="glass-effect overflow-hidden rounded-xl shadow-lg card-hover opacity-0 animate-fade-in animate-delay-500">
+          <div class="glass-effect overflow-hidden rounded-xl shadow-lg card-hover opacity-0 animate-fade-in animate-delay-100 shine-effect">
             <div class="gradient-overlay relative">
               <img src="https://drive.google.com/thumbnail?id=1P0Krf4iI6uWE3ISMv3DS2j_EjldibUTQ&sz=w1000" alt="Anggota" class="w-full h-100 object-cover" />
               <!-- <div class="absolute bottom-0 left-0 w-full p-4 text-left">
@@ -898,7 +943,7 @@
             </div>
           </div>
 
-          <div class="glass-effect overflow-hidden rounded-xl shadow-lg card-hover opacity-0 animate-fade-in animate-delay-500">
+          <div class="glass-effect overflow-hidden rounded-xl shadow-lg card-hover opacity-0 animate-fade-in animate-delay-100 shine-effect">
             <div class="gradient-overlay relative">
               <img src="https://drive.google.com/thumbnail?id=1M63B--xyaXtowupFa8Rn9XSR7X8cEpSE&sz=w1000" alt="Anggota" class="w-full h-100 object-cover" />
               <!-- <div class="absolute bottom-0 left-0 w-full p-4 text-left">
@@ -919,7 +964,7 @@
             </div>
           </div>
 
-          <div class="glass-effect overflow-hidden rounded-xl shadow-lg card-hover opacity-0 animate-fade-in animate-delay-500">
+          <div class="glass-effect overflow-hidden rounded-xl shadow-lg card-hover opacity-0 animate-fade-in animate-delay-100 shine-effect">
             <div class="gradient-overlay relative">
               <img src="https://drive.google.com/thumbnail?id=1daoHL2I3xRl10nEgbR8VSH5lePW3duN5&sz=w1000" alt="Anggota" class="w-full h-100 object-cover" />
               <!-- <div class="absolute bottom-0 left-0 w-full p-4 text-left">
@@ -940,7 +985,7 @@
             </div>
           </div>
 
-          <div class="glass-effect overflow-hidden rounded-xl shadow-lg card-hover opacity-0 animate-fade-in animate-delay-500">
+          <div class="glass-effect overflow-hidden rounded-xl shadow-lg card-hover opacity-0 animate-fade-in animate-delay-100 shine-effect">
             <div class="gradient-overlay relative">
               <img src="https://drive.google.com/thumbnail?id=1eT8kmIhDqGc-etzS-g52z6NcPTuSfmGw&sz=w1000" alt="Anggota" class="w-full h-100 object-cover" />
               <!-- <div class="absolute bottom-0 left-0 w-full p-4 text-left">
@@ -961,7 +1006,7 @@
             </div>
           </div>
 
-          <div class="glass-effect overflow-hidden rounded-xl shadow-lg card-hover opacity-0 animate-fade-in animate-delay-500">
+          <div class="glass-effect overflow-hidden rounded-xl shadow-lg card-hover opacity-0 animate-fade-in animate-delay-100 shine-effect">
             <div class="gradient-overlay relative">
               <img src="https://drive.google.com/thumbnail?id=1BMDa7PwddSETNqAJR3ZMt9s9uSRo4U21&sz=w1000" alt="Anggota" class="w-full h-100 object-cover" />
               <!-- <div class="absolute bottom-0 left-0 w-full p-4 text-left">
@@ -982,7 +1027,7 @@
             </div>
           </div>
 
-          <div class="glass-effect overflow-hidden rounded-xl shadow-lg card-hover opacity-0 animate-fade-in animate-delay-500">
+          <div class="glass-effect overflow-hidden rounded-xl shadow-lg card-hover opacity-0 animate-fade-in animate-delay-100 shine-effect">
             <div class="gradient-overlay relative">
               <img src="https://drive.google.com/thumbnail?id=1kXRObn7RUoFgQuzZFu4JnS7NhQ1zkqWj&sz=w1000" alt="Anggota" class="w-full h-100 object-cover" />
               <!-- <div class="absolute bottom-0 left-0 w-full p-4 text-left">
@@ -1003,7 +1048,7 @@
             </div>
           </div>
 
-          <div class="glass-effect overflow-hidden rounded-xl shadow-lg card-hover opacity-0 animate-fade-in animate-delay-500">
+          <div class="glass-effect overflow-hidden rounded-xl shadow-lg card-hover opacity-0 animate-fade-in animate-delay-100 shine-effect">
             <div class="gradient-overlay relative">
               <img src="https://drive.google.com/thumbnail?id=1GDQxfYa3341rk4-eHBPWr6mOFlssj-YF&sz=w1000" alt="Anggota" class="w-full h-100 object-cover" />
               <!-- <div class="absolute bottom-0 left-0 w-full p-4 text-left">
@@ -1024,7 +1069,7 @@
             </div>
           </div>
 
-          <div class="glass-effect overflow-hidden rounded-xl shadow-lg card-hover opacity-0 animate-fade-in animate-delay-500">
+          <div class="glass-effect overflow-hidden rounded-xl shadow-lg card-hover opacity-0 animate-fade-in animate-delay-100 shine-effect">
             <div class="gradient-overlay relative">
               <img src="https://drive.google.com/thumbnail?id=1YuJqI9Ua--hXjcuKdvSM5Dfa0qzKehzY&sz=w1000" alt="Anggota" class="w-full h-100 object-cover" />
               <!-- <div class="absolute bottom-0 left-0 w-full p-4 text-left">
@@ -1045,7 +1090,7 @@
             </div>
           </div>
 
-          <div class="glass-effect overflow-hidden rounded-xl shadow-lg card-hover opacity-0 animate-fade-in animate-delay-500">
+          <div class="glass-effect overflow-hidden rounded-xl shadow-lg card-hover opacity-0 animate-fade-in animate-delay-100 shine-effect">
             <div class="gradient-overlay relative">
               <img src="https://drive.google.com/thumbnail?id=17RWjqd03oEqJjGAAH5TKY67pAcCMRGfS&sz=w1000" alt="Anggota" class="w-full h-100 object-cover" />
               <!-- <div class="absolute bottom-0 left-0 w-full p-4 text-left">
@@ -1066,7 +1111,7 @@
             </div>
           </div>
 
-          <div class="glass-effect overflow-hidden rounded-xl shadow-lg card-hover opacity-0 animate-fade-in animate-delay-500">
+          <div class="glass-effect overflow-hidden rounded-xl shadow-lg card-hover opacity-0 animate-fade-in animate-delay-100 shine-effect">
             <div class="gradient-overlay relative">
               <img src="https://drive.google.com/thumbnail?id=1HVjJHO5aL00pZK3nZHQkcfA7MuZOKyP4&sz=w1000" alt="Anggota" class="w-full h-100 object-cover" />
               <!-- <div class="absolute bottom-0 left-0 w-full p-4 text-left">
@@ -1087,7 +1132,7 @@
             </div>
           </div>
 
-          <div class="glass-effect overflow-hidden rounded-xl shadow-lg card-hover opacity-0 animate-fade-in animate-delay-500">
+          <div class="glass-effect overflow-hidden rounded-xl shadow-lg card-hover opacity-0 animate-fade-in animate-delay-100 shine-effect">
             <div class="gradient-overlay relative">
               <img src="https://drive.google.com/thumbnail?id=1PUJVQQwtmxuaAtmKXFK1Xj2ru0Jn75_0&sz=w1000" alt="Anggota" class="w-full h-100 object-cover" />
               <!-- <div class="absolute bottom-0 left-0 w-full p-4 text-left">
@@ -1108,7 +1153,7 @@
             </div>
           </div>
 
-          <div class="glass-effect overflow-hidden rounded-xl shadow-lg card-hover opacity-0 animate-fade-in animate-delay-500">
+          <div class="glass-effect overflow-hidden rounded-xl shadow-lg card-hover opacity-0 animate-fade-in animate-delay-100 shine-effect">
             <div class="gradient-overlay relative">
               <img src="https://drive.google.com/thumbnail?id=1D6Xcs97o-uRq4aCJh0ESOP5x6zDZRm9Z&sz=w1000" alt="Anggota" class="w-full h-100 object-cover" />
               <!-- <div class="absolute bottom-0 left-0 w-full p-4 text-left">
@@ -1149,7 +1194,7 @@
           <div class="relative overflow-hidden">
             <!-- Event Cards -->
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-              <div class="glass-effect rounded-xl overflow-hidden shadow-lg card-hover opacity-0 animate-fade-in animate-delay-100">
+              <div class="glass-effect rounded-xl overflow-hidden shadow-lg card-hover opacity-0 animate-fade-in animate-delay-100 shine-effect">
                 <div class="gradient-overlay relative">
                   <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTTpESVj2NZPjFFqcZjIwxsCA7VZeFb5RwE6g&s" alt="Event 1" class="w-full h-48 object-cover" />
                     <div class="absolute top-4 left-4 bg-orangeAccent px-3 py-1 rounded-full text-sm font-medium text-[var(--dark-color)]">
@@ -1172,7 +1217,7 @@
                 </div>
               </div>
               
-              <div class="glass-effect rounded-xl overflow-hidden shadow-lg card-hover opacity-0 animate-fade-in animate-delay-200">
+              <div class="glass-effect rounded-xl overflow-hidden shadow-lg card-hover opacity-0 animate-fade-in animate-delay-100 shine-effect">
                 <div class="gradient-overlay relative">
                   <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR18pBhn3czaXKbe4dQ_weIEIezlunJVaK9YQ&s" alt="Event 2" class="w-full h-48 object-cover" />
                   <div class="absolute top-4 left-4 bg-orangeAccent px-3 py-1 rounded-full text-sm font-medium text-[var(--dark-color)]">
@@ -1195,7 +1240,7 @@
                 </div>
               </div>
               
-              <div class="glass-effect rounded-xl overflow-hidden shadow-lg card-hover opacity-0 animate-fade-in animate-delay-300">
+              <div class="glass-effect rounded-xl overflow-hidden shadow-lg card-hover opacity-0 animate-fade-in animate-delay-100 shine-effect">
                 <div class="gradient-overlay relative">
                   <img src="https://radarlambar.bacakoran.co/upload/051ef24b5d6438f4adc93651295e1ace.jpg" alt="Event 3" class="w-full h-48 object-cover" />
                   <div class="absolute top-4 left-4 bg-orangeAccent px-3 py-1 rounded-full text-sm font-medium text-[var(--dark-color)]">
@@ -1221,7 +1266,7 @@
             
             <!-- See All Events Button -->
             <div class="mt-8 text-center opacity-0 animate-fade-in animate-delay-400">
-              <a href="#" onclick="showToast('Belum ada ya.. sabar', 'info'); return false;" class="btn-accent inline-flex items-center justify-center px-6 py-3 rounded-full text-white space-x-2 glow-on-hover">
+              <a href="#" onclick="showToast('Belum ada ya.. sabar', 'info'); return false;" class="btn-accent inline-flex items-center justify-center px-6 py-3 rounded-full text-white space-x-2">
                 <span>Lihat Semua Event</span>
                 <i class="bi bi-arrow-right ms-2"></i>
               </a>
@@ -1243,7 +1288,7 @@
             </p>
             
             <div class="flex flex-col sm:flex-row items-center justify-center space-y-4 sm:space-y-0 sm:space-x-6">
-              <a href="https://glif-yours.vercel.app" target="_blank" class="btn-accent flex items-center justify-center px-6 py-3 rounded-full text-white space-x-2 glow-on-hover w-full sm:w-auto">
+              <a href="https://glif-yours.vercel.app" target="_blank" class="btn-accent flex items-center justify-center px-6 py-3 rounded-full text-white space-x-2 w-full sm:w-auto">
                 <i class="bi bi-box-arrow-up-right me-2"></i>
                 <span>Mulai Sekarang</span>
               </a>
