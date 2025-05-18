@@ -4,11 +4,11 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>GLIF | Centrum</title>
+  <title>GLIF | Centrum Beta</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
   <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="icon" type="image/png" href="../assets/images/Icon_accent.png">
+  <link rel="icon" type="image/png" href="../assets/images/devIcon_accent.png">
   <script>
     tailwind.config = {
       theme: {
@@ -339,7 +339,7 @@
     }
 
     .video-wrapper {
-      scale: 0.6;
+      scale: 0.3;
       animation: bounceIn 1s ease-out;
       will-change: transform;
     }
@@ -525,13 +525,10 @@
 
 <body class="bg-darkBg text-lightText font-sans">
   <!-- Preloader -->
-  <div id="intro-overlay">
+  <div id="intro-overlay" style="scale: 10rem;">
     <div id="intro_blur">
       <div class="video-wrapper">
-        <video autoplay muted loop>
-          <source src="assets\videos\intro_video.mp4" type="video/mp4">
-          Your browser does not support the video tag.
-        </video>
+        <img src="assets/images/devIcon_accent.png">
       </div>
     </div>
   </div>
@@ -599,8 +596,12 @@
       </div>
       </div>
 
-      <h1 class="text-4xl md:text-5xl font-bold mt-6 mb-4 opacity-0 animate-slide-up animate-delay-100">Be Bold, Unfold
+      <h1 class="text-4xl md:text-5xl font-bold mt-0 mb-4 opacity-0 animate-slide-up animate-delay-100">Be Bold, Unfold
       </h1>
+
+      <p class="text-lg text-orangeAccent mb-8 max-w-md mx-auto opacity-0 animate-slide-up animate-delay-200">
+        Beta Version. Updated 18/05/25 23:15
+      </p>
 
       <p class="text-lg text-gray-300 mb-8 max-w-md mx-auto opacity-0 animate-slide-up animate-delay-200">
         Kamu lebih dari yang kamu pikirkan. Kami adalah wadah untuk kamu yang ingin berkontribusi lebih untuk diri
@@ -1943,7 +1944,7 @@
         stopCarousel();
         intervalId = setInterval(() => {
           moveCarousel('next');
-        }, 4000);
+        }, 3500);
       }
 
       function enableCarouselMode() {
