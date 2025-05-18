@@ -1395,12 +1395,10 @@
 
       function setupCarousel() {
         carouselTrack.innerHTML = '';
-        const allCards = document.querySelectorAll('#anggota-grid .anggota-card');
-        allCards.forEach(card => {
+        cards.forEach(card => {
           const clone = card.cloneNode(true);
           clone.classList.add('min-w-full');
-          clone.style.display = 'block'; // Memastikan kartu terlihat
-          clone.classList.remove('hidden'); // Menghapus kelas hidden jika ada
+          clone.style.display = 'block';
           carouselTrack.appendChild(clone);
         });
       }
@@ -1429,33 +1427,22 @@
         }, 3000);
       }
 
-      // Initialize: Hide grid and show carousel in mobile, hide carousel and show grid in desktop
-      function initializeView() {
-        if (window.innerWidth >= 1024) { // Desktop breakpoint
-          grid.classList.add('hidden');
-          carouselWrapper.classList.remove('hidden');
-          setupCarousel();
-          startCarousel();
-        } else {
-          enableCarouselMode();
-        }
-      }
-
       function enableCarouselMode() {
-        grid.classList.add('hidden');
-        carouselWrapper.classList.remove('hidden');
+        grid.style.display = 'none';
+        carouselWrapper.style.display = 'block';
         setupCarousel();
         startCarousel();
       }
 
       function enableGridMode() {
         stopCarousel();
-        carouselWrapper.classList.add('hidden');
-        grid.classList.remove('hidden');
-        cards.forEach(card => {
-          card.style.display = 'block';
-          card.classList.remove('hidden');
-        });
+        carouselWrapper.style.display = 'none';
+        grid.style.display = 'grid';
+      }
+
+      // Initialize carousel mode by default
+      function initializeView() {
+        enableCarouselMode();
       }
 
       // Event Listeners
@@ -1484,11 +1471,8 @@
         }
       });
 
-      // Initialize the view
+      // Initialize the carousel view
       initializeView();
-
-      // Update view on resize
-      window.addEventListener('resize', initializeView);
     });
   </script>
 
