@@ -520,6 +520,25 @@
     .menu-animation-out {
       animation: menuAnimationOut 0.3s ease-in forwards;
     }
+
+    .border-s {
+      border-left-style: solid;
+    }
+
+    /* Animasi untuk dot timeline */
+    .absolute.w-3.h-3 {
+      
+    }
+
+    /* Hover effect untuk timeline items */
+    .mb-10:hover .absolute.w-3.h-3 {
+      transform: scale(1.4);
+      transition: transform 0.2s ease-in-out;
+    }
+
+    .mb-10:hover {
+      transition: transform 0.2s ease-in-out;
+    }
   </style>
 </head>
 
@@ -552,33 +571,37 @@
           </div>
         </a>
       </div>
-      <nav>
+      <nav class="relative">
         <button id="menu-toggle"
           class="text-lightText hover:text-orangeAccent focus:outline-none transition-transform duration-300 transform hover:scale-110 p-2 rounded-full"
           aria-label="Toggle menu">
           <i class="bi bi-list text-3xl"></i>
         </button>
-        <div id="menu" class="bg-black absolute right-4 top-20 p-5 rounded-xl space-y-4 hidden">
-          <a href="#home"
-            class="menu-item flex items-center space-x-3 text-lightText hover:text-orangeAccent transition-colors duration-300">
-            <i class="bi bi-house-door-fill"></i>
-            <span>Home</span>
-          </a>
-          <a href="#anggota"
-            class="menu-item flex items-center space-x-3 text-lightText hover:text-orangeAccent transition-colors duration-300">
-            <i class="bi bi-people-fill"></i>
-            <span>Anggota</span>
-          </a>
-          <a href="#event"
-            class="menu-item flex items-center space-x-3 text-lightText hover:text-orangeAccent transition-colors duration-300">
-            <i class="bi bi-calendar-event-fill"></i>
-            <span>Event</span>
-          </a>
-          <a href="#glifyour"
-            class="menu-item flex items-center space-x-3 text-lightText hover:text-orangeAccent transition-colors duration-300">
-            <i class="bi bi-link-45deg"></i>
-            <span>Glif Your</span>
-          </a>
+        <div id="menu" 
+             class="bg-black/80 backdrop-blur-md absolute right-0 mt-2 rounded-xl shadow-lg shadow-black/20 hidden">
+          <!-- Menu Links dengan padding yang lebih baik -->
+          <div class="p-2">
+            <a href="#home"
+              class="menu-item flex items-center space-x-3 text-lightText hover:text-orangeAccent transition-colors duration-300 px-6 py-3 rounded-lg hover:bg-white/5">
+              <i class="bi bi-house-door-fill"></i>
+              <span>Home</span>
+            </a>
+            <a href="#anggota"
+              class="menu-item flex items-center space-x-3 text-lightText hover:text-orangeAccent transition-colors duration-300 px-6 py-3 rounded-lg hover:bg-white/5">
+              <i class="bi bi-people-fill"></i>
+              <span>Anggota</span>
+            </a>
+            <a href="#event"
+              class="menu-item flex items-center space-x-3 text-lightText hover:text-orangeAccent transition-colors duration-300 px-6 py-3 rounded-lg hover:bg-white/5">
+              <i class="bi bi-calendar-event-fill"></i>
+              <span>Event</span>
+            </a>
+            <a href="#glifyour"
+              class="menu-item flex items-center space-x-3 text-lightText hover:text-orangeAccent transition-colors duration-300 px-6 py-3 rounded-lg hover:bg-white/5">
+              <i class="bi bi-link-45deg"></i>
+              <span>Glif Your</span>
+            </a>
+          </div>
         </div>
       </nav>
     </div>
@@ -600,7 +623,7 @@
       </h1>
 
       <p class="text-lg text-orangeAccent mb-8 max-w-md mx-auto opacity-0 animate-slide-up animate-delay-200">
-        Beta Version. Updated 18/05/25 23:15
+        Beta Version. Updated 19/05/25 23:58
       </p>
 
       <p class="text-lg text-gray-300 mb-8 max-w-md mx-auto opacity-0 animate-slide-up animate-delay-200">
@@ -627,10 +650,10 @@
 
       <div
         class="grid grid-cols-1 md:grid-cols-2 gap-4 w-full max-w-lg mx-auto opacity-0 animate-slide-up animate-delay-400">
-        <a href="#" onclick="showToast('Submission Sudah Ditutup', 'info');"
+        <a href="index.html"
           class="btn-accent flex items-center justify-center px-6 py-3 rounded-full text-white space-x-2">
-          <i class="bi bi-send-fill"></i>
-          <span>Submission : Next G</span>
+          <i class="bi bi-arrow-left"></i>
+          <span>Kembali ke Stable</span>
         </a>
 
         <a id="agen-balon-btn"
@@ -1567,7 +1590,7 @@
           <div class="inline-block bg-gradient-to-br  p-4 rounded-full mb-6">
             <img src="assets/images/g_accent.png" alt="G Logo" class="w-12 h-12 object-contain">
           </div>
-          <h2 class="text-3xl font-bold mb-4">Glify kan profile mu.</h2>
+          <h2 class="text-3xl font-bold mb-4">Glify your profile.</h2>
           <p class="text-gray-300 mb-8 max-w-lg mx-auto">
             Personalisasi profile Anda dengan tema unik dari Glif Studio yang didesain oleh anggota kami.
           </p>
@@ -1701,28 +1724,46 @@
   </div>
 
   <!-- Popup Changelog -->
-  <div id="changelog-popup-overlay"
-    class="fixed inset-0 z-50 bg-black/60 flex items-center justify-center transition-all duration-300 opacity-0 pointer-events-none">
+  <div id="changelog-popup-overlay" 
+       class="fixed inset-0 z-50 bg-black/60 flex items-center justify-center transition-all duration-300 opacity-0 pointer-events-none">
     <div id="changelog-popup"
-      class="relative glass-effect rounded-2xl shadow-lg p-8 w-full max-w-lg max-h-[90vh] overflow-y-auto text-left animate-bounce-in">
-      <!-- Close Button -->
-      <button id="close-changelog-popup"
-        class="absolute top-3 right-3 text-gray-400 hover:text-orangeAccent text-2xl focus:outline-none">
-        <i class="bi bi-x-lg"></i>
-      </button>
-      <h3 class="font-nauryz text-2xl mb-4 text-orangeAccent">Changelog Website</h3>
-      <ul class="list-disc pl-5 space-y-2 text-gray-200 font-space">
-        <li>17 Mei 2025: Penambahan fitur popup changelog dan toggle anggota. Hanya menampilkan 4 anggota saja agar
-          tidak menambahkan lag saat pertama kali membuka website, untuk menampilkan semua klik tombol "Lihat Semua
-          Anggota"</li>
-        <li>16 Mei 2025: Perbaikan animasi tombol dan grid anggota.</li>
-        <li>15 Mei 2025: Penambahan event baru dan update tampilan.</li>
-        <li>14 Mei 2025: Rilis awal website GLIF Centrum.</li>
-      </ul>
+         class="relative glass-effect rounded-2xl shadow-lg p-8 w-full max-w-lg max-h-[90vh] overflow-y-auto text-left animate-bounce-in">
+        <!-- Close Button -->
+        <button id="close-changelog-popup"
+                class="absolute top-3 right-3 text-gray-400 hover:text-orangeAccent text-2xl focus:outline-none">
+            <i class="bi bi-x-lg"></i>
+        </button>
+        <h3 class="font-nauryz text-2xl mb-6 text-orangeAccent">Changelog Website</h3>
+
+        <!-- Timeline Component -->
+        <ol class="relative border-s border-gray-700">                  
+            <li class="mb-10 ms-4 transition-all">
+                <div class="absolute w-3 h-3 bg-orangeAccent rounded-full mt-1.5 -start-1.5 border border-gray-900"></div>
+                <time class="mb-1 text-sm font-space leading-none text-gray-400">19 Mei 2025</time>
+                <h3 class="text-lg font-space text-white mt-2 mb-1">Penyesuaian Website</h3>
+                <p class="text-base font-space text-gray-400">Beberapa update termasuk :</p>
+                <ul class="list-disc list-inside text-gray-400 mt-2 space-y-1 ms-4 font-space">
+                    <li>Glif Yours Segment</li>
+                    <li>Versi timeline pada changelog</li>
+                    <li>Penyesuaian menu bar</li>
+                </ul>
+            </li>
+            <li class="mb-10 ms-4 transition-all">
+                <div class="absolute w-3 h-3 bg-orangeAccent rounded-full mt-1.5 -start-1.5 border border-gray-900"></div>
+                <time class="mb-1 text-sm font-normal leading-none text-gray-400">18 Mei 2025</time>
+                <h3 class="text-lg font-semibold text-white mt-2 mb-1">Initial Release</h3>
+                <p class="text-base font-normal text-gray-400">Website diluncurkan dengan fitur dasar seperti:</p>
+                <ul class="list-disc list-inside text-gray-400 mt-2 space-y-1 ms-4">
+                    <li>Halaman Utama</li>
+                    <li>Daftar Anggota</li>
+                    <li>Event</li>
+                    <li>Glif Yours Integration</li>
+                </ul>
+            </li>
+            <!-- Bisa tambahkan lebih banyak item timeline di sini -->
+        </ol>
     </div>
   </div>
-
-
 
   <!-- Footer -->
   <footer class="px-4 py-10 border-t border-gray-800 font-space">
@@ -2101,37 +2142,75 @@
     const menuToggle = document.getElementById('menu-toggle');
     const menu = document.getElementById('menu');
 
-    menuToggle.addEventListener('click', () => {
-      if (menu.classList.contains('hidden')) {
-        menu.classList.remove('hidden', 'menu-animation-out');
-        menu.classList.add('menu-animation');
-      } else {
-        menu.classList.remove('menu-animation');
-        menu.classList.add('menu-animation-out');
-        setTimeout(() => {
-          menu.classList.add('hidden');
-          menu.classList.remove('menu-animation-out');
-        }, 300); // match animation duration
-      }
-    });
+    function updateMenuPosition() {
+        const toggleRect = menuToggle.getBoundingClientRect();
+        const menuRect = menu.getBoundingClientRect();
+        
+        const viewportHeight = window.innerHeight;
+        const menuBottom = toggleRect.bottom + menuRect.height;
+        
+        if (menuBottom > viewportHeight) {
+            menu.style.top = 'auto';
+            menu.style.bottom = '100%';
+            menu.style.marginTop = '0';
+            menu.style.marginBottom = '0.5rem';
+        } else {
+            menu.style.top = '100%';
+            menu.style.bottom = 'auto';
+            menu.style.marginTop = '0.5rem';
+            menu.style.marginBottom = '0';
+        }
+    }
 
-    // Close menu when clicking outside
-    document.addEventListener('click', (e) => {
-      if (!menu.contains(e.target) && !menuToggle.contains(e.target) && !menu.classList.contains('hidden')) {
+    function closeMenuWithAnimation() {
         menu.classList.remove('menu-animation');
         menu.classList.add('menu-animation-out');
         setTimeout(() => {
-          menu.classList.add('hidden');
-          menu.classList.remove('menu-animation-out');
+            menu.classList.add('hidden');
+            menu.classList.remove('menu-animation-out');
         }, 300);
-      }
+    }
+
+    // Update posisi menu saat toggle diklik
+    menuToggle.addEventListener('click', (e) => {
+        e.stopPropagation(); // Prevent event bubbling
+        if (menu.classList.contains('hidden')) {
+            menu.classList.remove('hidden', 'menu-animation-out');
+            menu.classList.add('menu-animation');
+            updateMenuPosition();
+        } else {
+            closeMenuWithAnimation();
+        }
     });
 
     // Close menu when clicking outside
     document.addEventListener('click', (e) => {
-      if (!menu.contains(e.target) && !menuToggle.contains(e.target) && !menu.classList.contains('hidden')) {
-        menu.classList.add('hidden');
-      }
+        if (!menu.classList.contains('hidden') && 
+            !menu.contains(e.target) && 
+            !menuToggle.contains(e.target)) {
+            closeMenuWithAnimation();
+        }
+    });
+
+    // Update posisi menu saat scroll
+    window.addEventListener('scroll', () => {
+        if (!menu.classList.contains('hidden')) {
+            updateMenuPosition();
+        }
+    });
+
+    // Update posisi menu saat window resize
+    window.addEventListener('resize', () => {
+        if (!menu.classList.contains('hidden')) {
+            updateMenuPosition();
+        }
+    });
+
+    // Close menu when clicking menu items
+    menu.querySelectorAll('a').forEach(item => {
+        item.addEventListener('click', () => {
+            closeMenuWithAnimation();
+        });
     });
 
     // Smooth scrolling
