@@ -15,6 +15,13 @@
       font-family: SpaceGro, sans-serif;
     }
     
+    /* Disable default browser actions */
+    * {
+      user-select: none; /* Standard syntax */
+      -webkit-user-select: none; /* Safari */
+      -ms-user-select: none; /* IE 10+ */
+      -moz-user-select: none; /* Firefox */
+    }
     body {
       background-image: url('../images/background.png');
       background-size: cover;
@@ -28,7 +35,19 @@
       -webkit-backdrop-filter: blur(12px);
       border: 1px solid rgba(255, 255, 255, 0.1);
     }
-
+    
+    /* Prevent context menu and image dragging */
+    body, html {
+        -webkit-touch-callout: none; /* iOS Safari */
+        -webkit-user-drag: none; /* Safari */
+        user-drag: none; /* Standard syntax */
+    }
+    
+    img {
+        pointer-events: none; /* Prevent image dragging */
+    }
+    
+    
     /* Progress bar styles */
     .progress-bar-container {
       width: 100%;
