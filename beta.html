@@ -2349,6 +2349,31 @@
       }
       return num.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1,');
     }
+    // Disable long press (for mobile)
+  let longPressTimer;
+  document.addEventListener('touchstart', function (e) {
+    longPressTimer = setTimeout(function () {
+      e.preventDefault();
+      showToast && showToast('Fitur ini dinonaktifkan.', 'info');
+    }, 500); // 500ms = long press
+  }, { passive: false });
+
+  document.addEventListener('touchend', function () {
+    clearTimeout(longPressTimer);
+  });
+
+  // Optional: Prevent text/image selection
+  document.addEventListener('selectstart', function (e) {
+    e.preventDefault();
+    return false;
+  });
+  
+   // Prevent image drag
+   document.addEventListener('dragstart', function(e) {
+    if (e.target.tagName.toLowerCase() === 'img') {
+      e.preventDefault();
+    }
+  });
   </script>
 </body>
 
